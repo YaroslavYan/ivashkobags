@@ -31,7 +31,7 @@ export default function CheckoutPage() {
       name: "cash",
       label: "Готівка при отриманні",
       description:
-        "Оплата готівкою кур'єру або у відділенні пошти при отриманні замовлення.",
+        "Оплата готівкою кур&apos;єру або у відділенні пошти при отриманні замовлення.",
     },
   ];
 
@@ -50,11 +50,13 @@ export default function CheckoutPage() {
         <h2 className="text-2xl font-bold mb-6">Оформлення замовлення</h2>
         <form className="space-y-6">
           <div>
-            <label className="block mb-2 font-semibold">Ім'я та прізвище</label>
+            <label className="block mb-2 font-semibold">
+              Ім&apos;я та прізвище
+            </label>
             <input
               type="text"
               className="w-full p-3 border rounded-lg"
-              placeholder="Введіть ваше ім'я"
+              placeholder="Введіть ваше ім&#39;я"
               value={formData.name}
               onChange={(e) =>
                 setFormData({ ...formData, name: e.target.value })

@@ -101,14 +101,69 @@ export async function getCartItems({ userId, sessionId }) {
 
 //////////////////////////////////////////
 
+// export async function getProductById(id, locale = "pl") {
+//   const { data, error } = await supabase
+//     .from("products")
+//     .select(
+//       `
+//       *,
+//       productImages ( id, path, isPrimary, position ),
+//       product_translations:product_translations!inner (
+//         description,
+//         size,
+//         weight,
+//         material,
+//         meta_title,
+//         meta_description,
+//         locale
+//       )
+//     `
+//     )
+//     .eq("id", id)
+//     .maybeSingle(); // якщо хочемо один запис
+
+//   if (error) {
+//     console.error(error);
+//     return null;
+//   }
+
+//   console.log(data);
+//   // Вибираємо переклад за потрібною мовою
+//   let translated = {};
+//   if (locale !== "pl" && data.product_translations?.length) {
+//     const t = data.product_translations.find((tr) => tr.locale === locale);
+//     if (t) {
+//       translated = {
+//         description: t.description ?? data.description,
+//         size: t.size ?? data.size,
+//         weight: t.weight ?? data.weight,
+//         material: t.material ?? data.material,
+//         metaTitle: t.meta_title ?? data.metaTitle,
+//         metaDescription: t.meta_description ?? data.metaDescription,
+//       };
+//     }
+//   }
+
+//   // Розпаковуємо масив об'єктів у масив рядків (шляхів до фото)
+//   const images = data?.productImages?.map((img) => img.path) || [];
+
+//   console.log(data);
+
+//   return {
+//     ...data,
+//     ...translated,
+//     images,
+//   };
+// }
+
 export async function getProductById(id, locale = "pl") {
   const { data, error } = await supabase
     .from("products")
     .select(
       `
       *,
-      productImages ( id, path, isPrimary, position ),
-      product_translations:product_translations!inner (
+      productImages (id, path, isPrimary, position),
+      product_translations:product_translations!product_id (
         description,
         size,
         weight,
@@ -120,14 +175,14 @@ export async function getProductById(id, locale = "pl") {
     `
     )
     .eq("id", id)
-    .maybeSingle(); // якщо хочемо один запис
+    .maybeSingle();
 
   if (error) {
     console.error(error);
     return null;
   }
 
-  // Вибираємо переклад за потрібною мовою
+  // Вибираємо переклад, якщо він є
   let translated = {};
   if (locale !== "pl" && data.product_translations?.length) {
     const t = data.product_translations.find((tr) => tr.locale === locale);
@@ -143,8 +198,7 @@ export async function getProductById(id, locale = "pl") {
     }
   }
 
-  // Розпаковуємо масив об'єктів у масив рядків (шляхів до фото)
-  const images = data.productImages?.map((img) => img.path) || [];
+  const images = data?.productImages?.map((img) => img.path) || [];
 
   return {
     ...data,

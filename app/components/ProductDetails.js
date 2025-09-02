@@ -13,7 +13,7 @@ export default async function ProductDetails({ product }) {
       <div data-reveal className="flex-1 flex flex-col gap-4 from-right">
         <h1 className="text-2xl font-bold">{product?.title}</h1>
         <p className="text-xl font-semibold">{product?.price} грн</p>
-        <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-40">
+        <button className="w-80 p-4 bg-[#111] text-white  rounded hover:bg-gray-500  transition duration-300 ease-in-out">
           Додати в кошик
         </button>
 

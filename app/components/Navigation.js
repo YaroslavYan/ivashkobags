@@ -1,0 +1,111 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaShoppingCart,
+  FaTelegram,
+  FaUser,
+} from "react-icons/fa";
+import { FaShoppingBag } from "react-icons/fa";
+import { useCart } from "../context/CartContext";
+
+export default function Navigation() {
+  const navItems = [
+    { href: "/", label: "Головна" },
+    { href: "/products", label: "Каталог" },
+    { href: "/about", label: "Про нас" },
+  ];
+
+  const { openCart } = useCart();
+
+  const pathname = usePathname();
+
+  return (
+    <nav className="w-full h-full z-10 text-[#fff] m-0 p-0">
+      {/* Обгортка для горизонтального вирівнювання */}
+      <div
+        className="flex border  items-start h-full"
+        style={{ borderColor: "rgba(255,255,255,0.2)" }}
+      >
+        {/* Лого зліва */}
+        <div
+          className="flex-1 flex items-center px-6 h-[100px] border-b"
+          style={{ borderColor: "rgba(255,255,255,0.2)" }}
+        >
+          <Link
+            href="/"
+            className="flex items-center gap-2 tracking-widest text-2xl font-serif font-semibold"
+          >
+            IVASHKO <FaShoppingBag size={24} />
+          </Link>
+        </div>
+
+        {/* Правий блок */}
+        <div className="flex flex-col items-end h-full">
+          {/* Верхній рядок: соцмережі + кошик/юзер */}
+          <div className="flex">
+            {/* Соцмережі */}
+            <div
+              className="flex items-center justify-center gap-4 w-[200px] h-[100px] border-b border-l"
+              style={{ borderColor: "rgba(255,255,255,0.2)" }}
+            >
+              <Link href="#" className="hover:text-accent-400">
+                <FaFacebook size={20} />
+              </Link>
+              <Link href="#" className="hover:text-accent-400">
+                <FaInstagram size={20} />
+              </Link>
+              <Link href="#" className="hover:text-accent-400">
+                <FaTelegram size={20} />
+              </Link>
+            </div>
+
+            {/* Кошик + користувач */}
+            <div
+              className="flex items-center justify-center gap-6 w-[200px] h-[100px] border-b border-l"
+              style={{ borderColor: "rgba(255,255,255,0.2)" }}
+            >
+              <button onClick={openCart} className="cursor-pointer">
+                <FaShoppingCart className="hover:text-accent-400" size={24} />
+              </button>
+              <Link href="/login" className="hover:text-accent-400">
+                <FaUser size={24} />
+              </Link>
+            </div>
+          </div>
+
+          {/* Вертикальне меню під "кошиком + користувачем" */}
+          <ul
+            className="flex flex-col items-center justify-center gap-6 w-[200px] min-h-[300px] border-l border-b text-xl px-4"
+            style={{ borderColor: "rgba(255,255,255,0.2)" }}
+          >
+            {navItems.map(({ href, label }) => (
+              <li
+                key={href}
+                className="relative w-full flex items-center justify-center"
+              >
+                {pathname === href && (
+                  <span className="absolute left-[-25px] h-[1px] border-t-2 w-[34px] border-dotted border-[#ffffff]"></span>
+                )}
+                <Link
+                  href={href}
+                  className={`transition-colors hover:text-gray-300`}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <div
+            className="flex flex-col items-center justify-center gap-6 w-[200px] h-[100vh] border-l text-xl px-4"
+            style={{ borderColor: "rgba(255,255,255,0.2)" }}
+          ></div>
+        </div>
+      </div>
+    </nav>
+  );
+}

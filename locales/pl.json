@@ -1,0 +1,9 @@
+{
+  "Header": { "logo": "Ivashko" },
+  "Footer": {
+    "phone": "Phone: +38 (097) 00-00-00",
+    "delivery": "Payment & Delivery",
+    "privacy": "Privacy Policy"
+  },
+  "Product": { "addToCart": "Add to cart" }
+}

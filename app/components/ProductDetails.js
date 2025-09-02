@@ -21,7 +21,7 @@ export default async function ProductDetails({ product }) {
           <h2 className="text-lg font-semibold mb-2">Характеристики:</h2>
           <ul className="space-y-1">
             <li>Висота: {product.height}</li>
-            <li>Ширинра: {product.width}</li>
+            <li>Ширина: {product.width}</li>
             <li>Глибина: {product.depth}</li>
             <li>Матеріал: {product.material}</li>
           </ul>

@@ -6,7 +6,8 @@ const ProductGallery = ({ images }) => {
   const [mainImage, setMainImage] = useState(images[0]); // головна картинка
 
   return (
-    <div className="w-full h-full max-w-md mx-auto">
+    // <div className="w-full h-full max-w-md mx-auto">
+    <div className="w-full h-full  mx-auto">
       {/* Головна велика картинка */}
       <img
         src={`https://fsuiirlhbkviyvmjkpql.supabase.co/storage/v1/object/public/product-img/${mainImage}`}

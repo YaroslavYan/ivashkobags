@@ -1,3 +1,4 @@
+import MainPageCategory from "./components/MainPageCategory";
 import NewArrivals from "./components/NewArrivals";
 
 export const metadata = {
@@ -18,12 +19,8 @@ export const metadata = {
 export default function Home() {
   return (
     <div>
-      <h1>Ivashko – sklep z torebkami online</h1>
-      <p>
-        Oferujemy szeroki wybór eleganckich torebek damskich i męskich. Sprawdź
-        nasze nowości i wybierz model idealny dla siebie.
-      </p>
       <NewArrivals />
+      <MainPageCategory />
     </div>
   );
 }

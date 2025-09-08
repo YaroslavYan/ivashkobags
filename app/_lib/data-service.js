@@ -206,3 +206,50 @@ export async function getProductById(id, locale = "pl") {
     images,
   };
 }
+
+export async function getOrderById({ orderId, userId, sessionId }) {
+  if (!orderId) return null;
+
+  const filterKey = userId ? "userId" : "sessionId";
+  const filterValue = userId ?? sessionId;
+
+  if (!filterValue) return [];
+
+  const { data, error } = await supabase
+    .from("orders")
+    .select(
+      `
+      id,
+      userId,
+      sessionId,
+      totalAmount,
+      contactName,
+      contactPhone,
+      contactAddress,
+      paymentType,
+      status,
+      created_at,
+      orderItems (
+        id,
+        quantity,
+        price, 
+        product: products (
+          id,
+          title,
+          price
+        )
+      )
+    `
+    )
+    .eq("id", orderId)
+    // Перевірка власника: userId або sessionId
+    .eq(filterKey, filterValue)
+    .maybeSingle();
+
+  if (error) {
+    console.error("Помилка при отриманні замовлення:", error.message);
+    return null;
+  }
+
+  return data;
+}

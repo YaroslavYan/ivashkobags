@@ -13,7 +13,7 @@ function HeaderOverlay() {
 
         <div className="absolute left-[50px] bottom-1/4 ">
           <h1 data-reveal className="text-white font-bold text-3xl from-down">
-            Створені руками, натхненні природою.
+            Створені руками, натхненні штанами.
           </h1>
           <p data-reveal className="text-white from-up">
             Друге життя одягу — перша любов до сумок.

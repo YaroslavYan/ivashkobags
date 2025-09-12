@@ -74,13 +74,15 @@ export default function CartDrawer({ products, sessionId }) {
           </ul>
         )}
 
-        <Link
-          href="/checkout"
-          onClick={closeCart}
-          className="mt-auto bg-yellow-500 text-white text-center py-2 rounded sticky bottom-0 "
-        >
-          Оформити замовлення
-        </Link>
+        {products.length === 0 ? null : (
+          <Link
+            href="/checkout"
+            onClick={closeCart}
+            className="mt-auto bg-yellow-500 text-white text-center py-2 rounded sticky bottom-0 "
+          >
+            Оформити замовлення
+          </Link>
+        )}
       </div>
     </div>
   );

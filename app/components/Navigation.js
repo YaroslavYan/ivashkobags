@@ -71,9 +71,9 @@ export default function Navigation() {
               <button onClick={openCart} className="cursor-pointer">
                 <FaShoppingCart className="hover:text-accent-400" size={24} />
               </button>
-              <Link href="/login" className="hover:text-accent-400">
+              {/* <Link href="/login" className="hover:text-accent-400">
                 <FaUser size={24} />
-              </Link>
+              </Link> */}
             </div>
           </div>
 

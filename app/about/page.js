@@ -8,11 +8,11 @@ export default async function Page() {
       {/* Блок "Про нас" з фото зліва */}
       <div className="flex flex-col lg:flex-row items-center gap-12">
         {/* Фото зліва */}
-        <div className="w-full lg:w-2/5">
+        <div className="w-full lg:w-3/5">
           <img
             src="w5.jpg" // заміни на актуальний шлях до фото
             alt="Про нас"
-            className="w-full h-auto object-cover rounded-lg shadow-md"
+            className="w-full h-auto object-cover shadow-md"
             placeholder="blur"
           />
         </div>
@@ -36,17 +36,17 @@ export default async function Page() {
       {/* Блок "Матеріали" з фото справа */}
       <div className="flex flex-col lg:flex-row items-center gap-12 lg:flex-row-reverse">
         {/* Фото справа */}
-        <div className="w-full lg:w-2/5">
+        <div className="w-full lg:w-3/5">
           <img
-            src="q2.jpeg" // заміни на актуальний шлях до фото
+            src="12.jpeg" // заміни на актуальний шлях до фото
             alt="Матеріали"
-            className="w-full h-auto object-cover rounded-lg shadow-md"
+            className="w-full h-auto object-cover shadow-md"
             placeholder="blur"
           />
         </div>
 
         {/* Текст зліва */}
-        <div className="w-full lg:w-3/5">
+        <div className="w-full lg:w-2/5">
           <h1 className="text-4xl mb-10 text-accent-400 font-medium">
             Матеріали які ми використовуємо
           </h1>

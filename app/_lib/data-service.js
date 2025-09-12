@@ -1,24 +1,77 @@
 import { supabase } from "./supabase";
 
-export async function getProducts({ isNewOnly = false } = {}) {
-  let query = supabase.from("products").select(`
-    *,
-    productImages ( id, path, isPrimary, position )
-  `);
-  // const { data, error } = await supabase.from("products").select("*");
+export async function getProducts({
+  page = 1,
+  limit = 4,
+  categorySlug = "",
+  isNewOnly = false,
+} = {}) {
+  const from = (page - 1) * limit;
+  const to = from + limit - 1;
+
+  let query = supabase
+    .from("products")
+    .select(`*, productImages(id, path, isPrimary, position), categories(*)`, {
+      count: "exact",
+    })
+    .range(from, to);
+
+  if (categorySlug && categorySlug !== "all") {
+    // знаходимо categoryId
+    const { data: catData, error: catError } = await supabase
+      .from("categories")
+      .select("id")
+      .eq("slug", categorySlug)
+      .single();
+
+    if (catError) {
+      console.error(catError);
+    } else if (catData?.id) {
+      query = query.eq("categoryid", catData.id); // нижній регістр, як у твоїй БД
+    }
+  }
 
   if (isNewOnly) {
-    query = query.eq("isNew", true).limit(3); // фільтруємо і обмежуємо
+    query = query.eq("isNew", true).limit(6);
   }
 
-  const { data, error } = await query;
+  const { data, error, count } = await query;
+  if (error) console.error(error);
 
-  if (error) {
-    console.error(error);
-  }
-
-  return data;
+  return { products: data || [], total: count || 0 };
 }
+
+// export async function getProducts({
+//   page = 1,
+//   limit = 4,
+//   isNewOnly = false,
+// } = {}) {
+//   const from = (page - 1) * limit;
+//   const to = from + limit - 1;
+
+//   let query = supabase
+//     .from("products")
+//     .select(
+//       `
+//       *,
+//       productImages ( id, path, isPrimary, position )
+//       `,
+//       { count: "exact" } // додаємо count, щоб знати скільки всього товарів
+//     )
+//     .range(from, to);
+
+//   if (isNewOnly) {
+//     query = query.eq("isNew", true).limit(limit);
+//   }
+
+//   const { data, error, count } = await query;
+
+//   if (error) {
+//     console.error(error);
+//   }
+
+//   return { products: data, total: count };
+// }
 
 // export async function getProducts({ categorySlug, isNewOnly = false } = {}) {
 //   let query = supabase.from("products").select(`

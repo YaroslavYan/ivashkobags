@@ -1,5 +1,5 @@
 import RevealOnScroll from "./RevealOnScroll";
-import SidebarMenu from "./SidebarMenu";
+import SidebarMenu from "../products/SidebarMenu";
 
 export default function MainPageCategory() {
   return (

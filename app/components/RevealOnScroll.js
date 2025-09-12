@@ -7,6 +7,8 @@ export default function RevealOnScroll({
   stagger = 30,
   threshold = 0.08,
   immediate = false, // новий пропс
+  page,
+  categorySlug,
 }) {
   useEffect(() => {
     const nodes = Array.from(document.querySelectorAll(selector));
@@ -53,7 +55,7 @@ export default function RevealOnScroll({
       io.disconnect();
       timers.forEach((t) => clearTimeout(t));
     };
-  }, [selector, direction, stagger, threshold, immediate]);
+  }, [selector, direction, stagger, threshold, immediate, page, categorySlug]);
 
   return null;
 }

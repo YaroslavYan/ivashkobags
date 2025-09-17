@@ -1,7 +1,7 @@
 import RevealOnScroll from "./RevealOnScroll";
 
 export default function PhotoCard() {
-  const images = ["s1.WEBP", "s2.WEBP", "w2.jpg"];
+  const images = ["w2.jpg", "s2.webp", "s3.webp"];
 
   return (
     <div className="flex flex-col lg:flex-row items-center gap-8 p-8 mt-[80px]">
@@ -60,12 +60,12 @@ export default function PhotoCard() {
 
         /* Початкові позиції і оберт для кожного фото */
         .photo-card-img[data-photo-index="0"] {
-          left: -20px;
+          left: -30px;
           top: 0;
           transform: rotate(-15deg);
         }
         .photo-card-img[data-photo-index="1"] {
-          left: 2rem; /* lg:left-8 ~ 2rem */
+          left: 1rem; /* lg:left-8 ~ 2rem */
           top: 1rem;  /* lg:top-4 ~ 1rem */
           transform: rotate(0deg);
         }

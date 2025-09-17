@@ -47,7 +47,7 @@ export default function CheckoutPageClient({
       });
 
       // успіх — очистити UI і перейти на сторінку підтвердження
-      setCartItems([]);
+
       router.push(`/orders/${res.orderId}`);
     } catch (err) {
       console.error("Order error:", err);
@@ -77,14 +77,16 @@ export default function CheckoutPageClient({
   ];
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-[2fr_2fr] gap-8 p-8  min-h-screen">
+    <>
       {cartItems.length === 0 ? (
-        <div>
-          <h2 className="text-gray-500">Ваш кошик порожній 🛒</h2>
-          <p className="text-gray-500">Добавте товар щоб оформити замовлення</p>
+        <div className="flex items-center justify-center flex-col p-8">
+          <h2 className="text-gray-500 text-4xl">Ваш кошик порожній 🛒</h2>
+          <p className="text-gray-500 text-2xl">
+            Добавте товар щоб оформити замовлення
+          </p>
         </div>
       ) : (
-        <>
+        <div className="grid grid-cols-1 lg:grid-cols-[2fr_2fr] gap-8 p-8  min-h-screen">
           {/* Ліва частина — форма */}
           <div>
             <h2 className="text-2xl font-bold mb-6">Оформлення замовлення</h2>
@@ -224,8 +226,8 @@ export default function CheckoutPageClient({
               <span>{total} грн</span>
             </div>
           </div>
-        </>
+        </div>
       )}
-    </div>
+    </>
   );
 }

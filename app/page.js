@@ -1,5 +1,6 @@
 import MainPageCategory from "./components/MainPageCategory";
 import NewArrivals from "./components/NewArrivals";
+import PhotoCard from "./components/PhotoCard";
 
 export const metadata = {
   title: "Sklep z torebkami damskimi i męskimi | Ivashko",
@@ -21,6 +22,7 @@ export default function Home() {
     <div>
       <NewArrivals />
       <MainPageCategory />
+      <PhotoCard />
     </div>
   );
 }

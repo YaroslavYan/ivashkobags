@@ -3,7 +3,10 @@ import AddToCartButton from "./AddToCartButton";
 
 export default function NewProductCard({ image, title, price, id }) {
   return (
-    <div data-reveal className="relative from-down max-w-[500px]">
+    <div
+      data-reveal
+      className="relative from-down w-full max-w-full sm:max-w-[350px]"
+    >
       <Link href={`/product/${id}`} key={id}>
         <img
           src={image}

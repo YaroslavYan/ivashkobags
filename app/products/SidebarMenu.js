@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const categories = [
   {
-    name: "Усі",
+    name: "Всі",
     slug: "all",
     image: "w1.jpg",
   },
@@ -42,7 +42,7 @@ export default function SidebarMenu({ variant = "products" }) {
 
   const imgClasses =
     variant === "main"
-      ? "w-16 h-16 rounded-full object-cover aspect-square"
+      ? "w-30 h-30 md:w-20 md:h-20 rounded-full object-cover aspect-square"
       : "w-12 h-12 rounded-full object-cover aspect-square";
   return (
     <aside data-reveal className={asideClasses}>

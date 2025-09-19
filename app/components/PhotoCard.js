@@ -8,25 +8,21 @@ export default function PhotoCard() {
       {/* Ліва частина — текст */}
 
       <div className="flex-1 relative w-full h-64 lg:h-80 flex justify-center">
-        <div className="relative w-80 h-80">
-          {images.map((src, index) => {
-            return (
-              <img
-                data-reveal
-                key={index}
-                src={src}
-                alt={`Фото ${index + 1}`}
-                // Загальні Tailwind-класи + індивідуальний CSS клас photo-{index}
-                className={`
-                  photo-card-img
-                  absolute w-80 h-80 object-cover rounded-lg shadow-lg
-                  transition-transform duration-300
-                `}
-                // додаємо індивідуальний клас через data-атрибут (щоб легко стилізувати)
-                data-photo-index={index}
-              />
-            );
-          })}
+        <div className="relative w-full max-w-[320px] aspect-[1/1]">
+          {images.map((src, index) => (
+            <img
+              data-reveal
+              key={index}
+              src={src}
+              alt={`Фото ${index + 1}`}
+              className={`
+        photo-card-img
+        absolute inset-0 w-full h-full object-cover rounded-lg shadow-lg
+        transition-transform duration-300
+      `}
+              data-photo-index={index}
+            />
+          ))}
         </div>
       </div>
 
@@ -34,10 +30,10 @@ export default function PhotoCard() {
 
       <div
         data-reveal
-        className="flex-1 text-center lg:text-left mt-[40px] md:mt-[80px]"
+        className="flex-1 text-center lg:text-left mt-[40px] md:mt-[80px] z-50"
       >
         <div className="flex items-center">
-          <h2 className="text-3xl font-bold mb-4">Заголовок тексту</h2>
+          <h2 className="text-3xl font-bold mb-4">Про нас</h2>
           <span className="h-[1px] border-t-2 w-[34px] border-dotted border-[#0f0f0f] mt-[-10px] ml-[15px]"></span>
         </div>
 
@@ -60,37 +56,66 @@ export default function PhotoCard() {
 
         /* Початкові позиції і оберт для кожного фото */
         .photo-card-img[data-photo-index="0"] {
-          left: -30px;
-          top: 0;
+          left: -80px;
+          top: 100px;
           transform: rotate(-15deg);
         }
         .photo-card-img[data-photo-index="1"] {
           left: 1rem; /* lg:left-8 ~ 2rem */
-          top: 1rem;  /* lg:top-4 ~ 1rem */
+          top: -5rem;  /* lg:top-4 ~ 1rem */
           transform: rotate(0deg);
         }
         .photo-card-img[data-photo-index="2"] {
-          left: 4rem; /* lg:left-16 ~ 4rem */
+          left: 8rem; /* lg:left-16 ~ 4rem */
           top: 2rem;  /* lg:top-8 ~ 2rem */
           transform: rotate(15deg);
         }
 
         /* Hover: зберігаємо початковий поворот, додаємо підняття, невеликий масштаб і великий z-index */
         .photo-card-img[data-photo-index="0"]:hover {
-          transform: rotate(-15deg) translateY(-20px) scale(1.03);
-          z-index: 50;
+          transform: scale(1.03);
+          z-index: 40;
           box-shadow: 0 20px 40px rgba(0,0,0,0.25);
         }
         .photo-card-img[data-photo-index="1"]:hover {
-          transform: rotate(0deg) translateY(-20px) scale(1.03);
-          z-index: 50;
+          transform:  scale(1.03);
+          z-index: 40;
           box-shadow: 0 20px 40px rgba(0,0,0,0.25);
         }
         .photo-card-img[data-photo-index="2"]:hover {
-          transform: rotate(15deg) translateY(-20px) scale(1.03);
-          z-index: 50;
+          transform:  scale(1.03);
+          z-index: 40;
           box-shadow: 0 20px 40px rgba(0,0,0,0.25);
         }
+
+      @media (max-width: 618px) {
+        .photo-card-img[data-photo-index="0"] {
+        left: -20px;  /* нові значення */
+        top: 50px;
+        }
+        .photo-card-img[data-photo-index="1"] {
+        left: 0.5rem;
+        top: -2rem;
+        }
+        .photo-card-img[data-photo-index="2"] {
+        left: 4rem;
+        top: 1rem;
+        }
+      }
+      @media (max-width: 515px) {
+        .photo-card-img[data-photo-index="0"] {
+        left: -30px;  /* нові значення */
+        top: 50px;
+        }
+        .photo-card-img[data-photo-index="1"] {
+        left: 0.5rem;
+        top: -2rem;
+        }
+        .photo-card-img[data-photo-index="2"] {
+        left: 3rem;
+        top: 1rem;
+        }
+      }
       `}</style>
     </div>
   );

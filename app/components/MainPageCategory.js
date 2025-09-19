@@ -10,13 +10,15 @@ export default function MainPageCategory() {
       >
         {/* Верх */}
         <div className="flex flex-col items-center gap-3 pb-8">
-          <h2 className="text-2xl font-bold mb-4 text-center">Категорії</h2>
+          <h2 className="text-2xl font-bold mb-4 text-center">
+            Обирай за категоріями
+          </h2>
           <span className="h-[22px] border-l-2 w-[1px] border-dotted border-[#0f0f0f]"></span>
         </div>
 
         {/* Центр */}
         <div className="flex flex-1 items-center justify-center">
-          <ul className="max-w-[400px] space-y-4">
+          <ul className="md:max-w-[400px] space-y-4">
             <li>
               <strong>Тоут сумки</strong> — твій надійний напарник у великому
               місті. Просторі й стильні.

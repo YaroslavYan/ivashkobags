@@ -89,7 +89,9 @@ export default function CheckoutPageClient({
         <div className="grid grid-cols-1 lg:grid-cols-[2fr_2fr] gap-8 p-8  min-h-screen">
           {/* Ліва частина — форма */}
           <div>
-            <h2 className="text-2xl font-bold mb-6">Оформлення замовлення</h2>
+            <h2 className="text-2xl font-bold mb-6 text-[#171717]">
+              Оформлення замовлення
+            </h2>
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label className="block mb-2 font-semibold">
@@ -141,7 +143,7 @@ export default function CheckoutPageClient({
                 </label>
                 <textarea
                   type="text"
-                  className="w-full p-3 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+                  className="w-full p-3 border  border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
                   placeholder="Додаткова інформація..."
                   value={formData.comment}
                   onChange={(e) =>
@@ -189,7 +191,9 @@ export default function CheckoutPageClient({
 
           {/* Права частина — кошик */}
           <div className="bg-gray-100 p-6 rounded-lg h-fit sticky top-8">
-            <h3 className="text-xl font-bold mb-4">Ваше замовлення</h3>
+            <h3 className="text-xl font-bold mb-4 text-[#171717]">
+              Ваше замовлення
+            </h3>
             <ul className="space-y-4">
               {cartItems.map((it) => {
                 const id = it.products?.id ?? it.id;

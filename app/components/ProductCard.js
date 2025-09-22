@@ -15,7 +15,7 @@ export default function ProductCard({ image, title, price, id, inCart }) {
 
       <div className="absolute bottom-0 left-0 w-full bg-white/80 px-4 py-2 flex justify-between items-center">
         <div>
-          <h3 className="font-semibold text-base">{title}</h3>
+          <h3 className="font-semibold text-base text-[#171717]">{title}</h3>
           <p className="text-gray-600 text-sm">{price} €</p>
         </div>
         <AddToCartButton id={id} inCart={inCart} />

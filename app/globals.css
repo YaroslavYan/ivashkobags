@@ -33,7 +33,11 @@ input::placeholder {
   color: #9ca3af;
 }
 label,
-span {
+span,
+textarea,
+input,
+h2,
+h3 {
   color: #171717;
 }
 [data-reveal] {

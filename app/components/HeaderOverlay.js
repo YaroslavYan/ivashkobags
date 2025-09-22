@@ -1,3 +1,4 @@
+import MobileNavigation from "./MobileNavigation";
 import Navigation from "./Navigation";
 import RevealOnScroll from "./RevealOnScroll";
 
@@ -10,6 +11,9 @@ function HeaderOverlay() {
         // style={{ maxWidth: "1600px" }}
       >
         <Navigation />
+
+        {/* Мобільне меню */}
+        <MobileNavigation />
 
         <div className="absolute left-[50px] bottom-1/4 ">
           <h1 data-reveal className="text-white font-bold text-3xl from-down">

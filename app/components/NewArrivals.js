@@ -1,10 +1,15 @@
-import Link from "next/link";
 import NewProductCard from "./NewProductCard";
-import { getProducts } from "../_lib/data-service";
+import { getCartItems, getProducts } from "../_lib/data-service";
 import RevealOnScroll from "./RevealOnScroll";
+import { cookies } from "next/headers";
 
 export default async function NewArrivals() {
   const { products } = await getProducts({ isNewOnly: true });
+
+  const cookieStore = await cookies(); // це вже можна викликати синхронно в серверній компоненті
+  const sessionId = cookieStore.get("sessionId")?.value;
+
+  const productsCart = await getCartItems({ sessionId });
 
   return (
     <section className="my-8 sm:px-6 lg:px-8">
@@ -13,16 +18,22 @@ export default async function NewArrivals() {
         <span className=" h-[22px] border-l-2 w-[1px] border-dotted border-[#0f0f0f]"></span>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {products.map((product) => (
-          <div key={product.id}>
+        {products.map((product) => {
+          const inCart = productsCart.some(
+            (item) => item.products.id === product.id
+          );
+
+          return (
             <NewProductCard
+              key={product.id}
               id={product.id}
               image={product.image}
               title={product.title}
               price={product.price}
+              inCart={inCart} //  передаємо прапорець
             />
-          </div>
-        ))}
+          );
+        })}
       </div>
       <RevealOnScroll />
     </section>

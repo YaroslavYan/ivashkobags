@@ -24,7 +24,7 @@ export default function Navigation() {
   const pathname = usePathname();
 
   return (
-    <nav className="w-full h-full z-10 text-[#fff] m-0 p-0">
+    <nav className="w-full h-full z-10 text-[#fff] m-0 p-0 hidden md:block">
       {/* Обгортка для горизонтального вирівнювання */}
       <div
         className="flex border  items-start h-full"

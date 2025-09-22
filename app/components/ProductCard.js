@@ -1,7 +1,7 @@
 import Link from "next/link";
 import AddToCartButton from "./AddToCartButton";
 
-export default function ProductCard({ image, title, price, id }) {
+export default function ProductCard({ image, title, price, id, inCart }) {
   return (
     <article
       data-reveal
@@ -18,7 +18,7 @@ export default function ProductCard({ image, title, price, id }) {
           <h3 className="font-semibold text-base">{title}</h3>
           <p className="text-gray-600 text-sm">{price} €</p>
         </div>
-        <AddToCartButton id={id} />
+        <AddToCartButton id={id} inCart={inCart} />
       </div>
     </article>
   );

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import AddToCartButton from "./AddToCartButton";
 
-export default function NewProductCard({ image, title, price, id }) {
+export default function NewProductCard({ image, title, price, id, inCart }) {
   return (
     <div
       data-reveal
@@ -21,7 +21,7 @@ export default function NewProductCard({ image, title, price, id }) {
         </div>
 
         <div className="flex justify-end">
-          <AddToCartButton id={id} />
+          <AddToCartButton id={id} inCart={inCart} />
         </div>
       </div>
     </div>

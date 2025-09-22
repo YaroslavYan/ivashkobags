@@ -1,8 +1,9 @@
 import ProductCard from "../components/ProductCard";
 import SidebarMenu from "./SidebarMenu";
-import { getProducts } from "../_lib/data-service";
+import { getCartItems, getProducts } from "../_lib/data-service";
 import RevealOnScroll from "../components/RevealOnScroll";
 import PaginationClient from "./PaginationClient";
+import { cookies } from "next/headers";
 
 export const metadata = {
   title: "Guest area",
@@ -10,6 +11,11 @@ export const metadata = {
 
 export default async function Page(props) {
   const searchParams = await props.searchParams;
+
+  const cookieStore = await cookies(); // це вже можна викликати синхронно в серверній компоненті
+  const sessionId = cookieStore.get("sessionId")?.value;
+
+  const productsCart = await getCartItems({ sessionId });
 
   let page = 1;
   if (searchParams?.page) {
@@ -45,19 +51,26 @@ export default async function Page(props) {
               Товари не знайдені для цієї сторінки.
             </div>
           ) : (
-            products.map((product) => (
-              <ProductCard
-                key={product.id}
-                id={product.id}
-                image={
-                  product.image ||
-                  (product.productImages && product.productImages[0]?.path) ||
-                  "/placeholder.jpg"
-                }
-                title={product.title}
-                price={product.price}
-              />
-            ))
+            products.map((product) => {
+              const inCart = productsCart.some(
+                (item) => item.products.id === product.id
+              );
+
+              return (
+                <ProductCard
+                  key={product.id}
+                  id={product.id}
+                  image={
+                    product.image ||
+                    (product.productImages && product.productImages[0]?.path) ||
+                    "/placeholder.jpg"
+                  }
+                  title={product.title}
+                  price={product.price}
+                  inCart={inCart} //  сюди передаємо результат перевірки
+                />
+              );
+            })
           )}
         </div>
 

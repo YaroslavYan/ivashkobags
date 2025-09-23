@@ -8,7 +8,11 @@ export default function PhotoCard() {
       {/* Ліва частина — текст */}
 
       <div className="flex-1 relative w-full h-64 lg:h-80 flex justify-center">
-        <div className="relative w-full max-w-[320px] aspect-[1/1]">
+        <div
+          className="relative
+          w-[250px] h-[250px]   /* за замовчуванням для мобільних */
+          sm:w-full sm:max-w-[320px] sm:aspect-[1/1]  /* з ширини ≥640px */"
+        >
           {images.map((src, index) => (
             <img
               data-reveal
@@ -113,6 +117,19 @@ export default function PhotoCard() {
         }
         .photo-card-img[data-photo-index="2"] {
         left: 3rem;
+        top: 1rem;
+        }
+        @media (max-width: 380px) {
+        .photo-card-img[data-photo-index="0"] {
+        left: -10px;  /* нові значення */
+        top: 20px;
+        }
+        .photo-card-img[data-photo-index="1"] {
+        left: 0.5rem;
+        top: 0rem;
+        }
+        .photo-card-img[data-photo-index="2"] {
+        left: 1rem;
         top: 1rem;
         }
       }

@@ -3,8 +3,8 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <footer className="bg-black text-white py-16 px-8 mt-24">
-      <div className="max-w-8xl mx-auto flex flex-col md:flex-row justify-between gap-4 px-16">
+    <footer className="bg-black text-white py-16 px-4 sm:px-8 mt-24">
+      <div className="max-w-8xl mx-auto flex flex-row justify-between gap-4 px-0 sm:px-16">
         {/* Лого */}
         <div className="text-xl font-bold">IVASHKO</div>
 
@@ -32,12 +32,12 @@ function Footer() {
 
       {/* Лінія */}
       <div
-        className="border-t  my-4 mt-[50px]"
+        className="border-t my-4 mt-[50px]"
         style={{ borderColor: "rgba(255,255,255,0.2)" }}
       ></div>
 
       {/* Нижні посилання */}
-      <div className="max-w-8xl mx-auto flex justify-end gap-6 text-sm mt-[50px] px-16">
+      <div className="max-w-8xl mx-auto flex justify-end gap-6 text-sm mt-[50px] px-0 sm:px-16">
         <Link href="/delivery" className="hover:text-gray-400 transition">
           Оплата та доставка
         </Link>

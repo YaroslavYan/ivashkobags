@@ -9,13 +9,13 @@ export default function LoginPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (isRegister) {
-      console.log("Реєстрація:", { email, password });
-      // TODO: виклик API для реєстрації
-    } else {
-      console.log("Вхід:", { email, password });
-      // TODO: виклик API для входу
-    }
+    // if (isRegister) {
+    //   console.log("Реєстрація:", { email, password });
+    //   // TODO: виклик API для реєстрації
+    // } else {
+    //   console.log("Вхід:", { email, password });
+    //   // TODO: виклик API для входу
+    // }
   };
 
   return (

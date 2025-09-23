@@ -29,7 +29,7 @@ export default function MobileNavigation() {
   // Відстеження скролу
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 30);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -41,10 +41,10 @@ export default function MobileNavigation() {
       {/* Фіксована шапка завжди */}
       <div
         className={`
-    fixed top-0 left-0 w-full z-50 flex justify-between items-center h-[80px] px-4
-    bg-black transition-all duration-300
-    ${isScrolled ? "bg-opacity-100" : "bg-opacity-60"}
-  `}
+      fixed top-0 left-0 w-full z-50 flex justify-between items-center h-[80px] px-4
+    bg-black transition-all duration-300 
+      ${isScrolled ? "bg-black/100" : "bg-black/60"}
+      `}
       >
         <Link
           href="/"

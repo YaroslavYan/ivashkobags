@@ -4,13 +4,13 @@ export const metadata = {
 
 export default async function Page() {
   return (
-    <div className="space-y-32 text-lg">
+    <div className="p-[15px] md:p-0 space-y-32 text-lg">
       {/* Блок "Про нас" з фото зліва */}
       <div className="flex flex-col lg:flex-row items-center gap-12">
         {/* Фото зліва */}
         <div className="w-full lg:w-3/5">
           <img
-            src="w5.jpg" // заміни на актуальний шлях до фото
+            src="w5.jpg"
             alt="Про нас"
             className="w-full h-auto object-cover shadow-md"
             placeholder="blur"
@@ -38,7 +38,7 @@ export default async function Page() {
         {/* Фото справа */}
         <div className="w-full lg:w-3/5">
           <img
-            src="12.jpeg" // заміни на актуальний шлях до фото
+            src="12.jpeg"
             alt="Матеріали"
             className="w-full h-auto object-cover shadow-md"
             placeholder="blur"

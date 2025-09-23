@@ -34,7 +34,7 @@ export default function PhotoCard() {
 
       <div
         data-reveal
-        className="flex-1 text-center lg:text-left mt-[40px] md:mt-[80px] z-50"
+        className="flex-1 text-center lg:text-left mt-[40px] md:mt-[80px] z-40"
       >
         <div className="flex items-center">
           <h2 className="text-3xl font-bold mb-4">Про нас</h2>

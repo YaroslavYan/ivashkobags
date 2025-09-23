@@ -16,10 +16,10 @@ function HeaderOverlay() {
         <MobileNavigation />
 
         <div className="absolute left-[50px] bottom-1/4 ">
-          <h1 data-reveal className="text-white font-bold text-3xl from-down">
+          <h1 className="text-white font-bold text-xl md:text-2xl lg:text-3xl [@media(max-width:360px)]:text-sm">
             Створені руками, натхненні штанами.
           </h1>
-          <p data-reveal className="text-white from-up">
+          <p className="text-white text-sm md:text-base lg:text-lg [@media(max-width:360px)]:text-xs">
             Друге життя одягу — перша любов до сумок.
           </p>
         </div>

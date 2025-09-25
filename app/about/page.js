@@ -19,10 +19,10 @@ export default async function Page() {
 
         {/* Текст справа */}
         <div className="w-full lg:w-3/5">
-          <h1 className="text-4xl mb-10 text-accent-400 font-medium">
+          <h1 className="text-4xl mb-10 text-accent-400 font-medium text-[#171717]">
             Про нас
           </h1>
-          <div className="space-y-8">
+          <div className="space-y-8 text-[#171717]">
             <p>
               Ми — майстерня IVASHKO, де кожна сумка має свою історію. Ми віримо
               в красу простих речей і силу другого шансу. Наші вироби — це не
@@ -47,10 +47,10 @@ export default async function Page() {
 
         {/* Текст зліва */}
         <div className="w-full lg:w-2/5">
-          <h1 className="text-4xl mb-10 text-accent-400 font-medium">
+          <h1 className="text-4xl mb-10 text-accent-400 font-medium text-[#171717]">
             Матеріали які ми використовуємо
           </h1>
-          <div className="space-y-8">
+          <div className="space-y-8 text-[#171717]">
             <p>
               Ми шиємо з того, що вже було кимось колись обране: старі джинси,
               куртки, тканини з секонд-хенду. Ми ретельно відбираємо матеріали,

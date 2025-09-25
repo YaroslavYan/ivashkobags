@@ -17,7 +17,7 @@ export default async function NewArrivals() {
         <h2 className="text-2xl font-bold mb-4 text-center">Рекомендоване</h2>
         <span className=" h-[22px] border-l-2 w-[1px] border-dotted border-[#0f0f0f]"></span>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-[10px] sm:px-0">
         {products.map((product) => {
           const inCart = productsCart.some(
             (item) => item.products.id === product.id

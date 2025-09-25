@@ -129,7 +129,7 @@ export default function SidebarMenu({ variant = "products" }) {
             <button
               onClick={() => handleClick(cat.slug)}
               className={`flex items-center gap-2 w-full text-left pr-4 py-2 rounded cursor-pointer transition-colors hover:text-gray-400
-                ${variant === "main" ? "flex-col" : "flex-row"} sm:flex-row`}
+              ${variant === "main" ? "flex-col lg:flex-row" : "flex-row"}`}
             >
               <div className="relative">
                 <img src={cat.image} alt={cat.name} className={imgClasses} />
@@ -139,7 +139,11 @@ export default function SidebarMenu({ variant = "products" }) {
                   </span>
                 )}
               </div>
-              <span className={variant === "main" ? "ml-[15px]" : "ml-[10px]"}>
+              <span
+                className={
+                  variant === "main" ? "ml-0 lg:ml-[15px]" : "ml-[10px]"
+                }
+              >
                 {cat.name}
               </span>
             </button>

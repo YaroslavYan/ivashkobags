@@ -15,7 +15,7 @@ export default function NewProductCard({ image, title, price, id, inCart }) {
       {/* Карточка з текстом і кнопкою */}
       <div className="flex pb-[10px] pl-[30px] w-full justify-between bg-white/80 border-b border-gray-300">
         <div>
-          <h3 className="mt-2 font-semibold">{title}</h3>
+          <h3 className="mt-2 font-semibold text-[#171717]">{title}</h3>
           <p className="text-gray-600 mt-1">{price} €</p>
         </div>
 

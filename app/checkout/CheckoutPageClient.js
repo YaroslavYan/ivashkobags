@@ -4,12 +4,14 @@ import { useState } from "react";
 import { FaTrash } from "react-icons/fa";
 import { addOrderAction, removeFromCartAction } from "../_lib/actions";
 import { useRouter } from "next/navigation";
+import SpinnerMini from "../components/SpinnerMini";
 
 export default function CheckoutPageClient({
   initialCartItems = [],
   sessionId,
 }) {
   const [cartItems, setCartItems] = useState(initialCartItems);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -28,10 +30,9 @@ export default function CheckoutPageClient({
 
   async function handleSubmit(e) {
     e.preventDefault();
-    // if (cartItems.length === 0) {
-    //   alert("Кошик порожній");
-    //   return;
-    // }
+
+    if (loading) return; // щоб не задублювати запит
+    setLoading(true);
 
     try {
       const res = await addOrderAction({
@@ -52,6 +53,7 @@ export default function CheckoutPageClient({
     } catch (err) {
       console.error("Order error:", err);
       alert("Сталася помилка при створенні замовлення");
+      setLoading(false); // тільки у випадку помилки
     }
   }
 
@@ -182,9 +184,10 @@ export default function CheckoutPageClient({
 
               <button
                 type="submit"
+                disabled={loading}
                 className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700"
               >
-                Підтвердити замовлення
+                {loading ? <SpinnerMini /> : "Підтвердити замовлення"}
               </button>
             </form>
           </div>

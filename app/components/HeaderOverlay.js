@@ -2,8 +2,6 @@ import MobileNavigation from "./MobileNavigation";
 import Navigation from "./Navigation";
 import RevealOnScroll from "./RevealOnScroll";
 
-import { FaHeart } from "react-icons/fa";
-
 function HeaderOverlay() {
   return (
     //Or absolute
@@ -18,10 +16,16 @@ function HeaderOverlay() {
         <MobileNavigation />
 
         <div className="absolute left-[50px] bottom-1/4 ">
-          <h1 className="text-white font-bold text-xl md:text-2xl lg:text-3xl [@media(max-width:360px)]:text-sm">
+          <h1
+            data-reveal
+            className="text-white font-bold text-xl md:text-2xl lg:text-3xl [@media(max-width:360px)]:text-sm from-right"
+          >
             Сумки з історією. Твій стиль із новим подихом.
           </h1>
-          <p className="text-white text-sm md:text-base lg:text-lg [@media(max-width:360px)]:text-xs">
+          <p
+            data-reveal
+            className="text-white text-sm md:text-base lg:text-lg [@media(max-width:360px)]:text-xs from-left"
+          >
             Друге життя одягу — перша любов до сумок.
           </p>
         </div>

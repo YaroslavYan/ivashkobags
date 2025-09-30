@@ -9,20 +9,20 @@ export default function PhotoCard() {
 
       <div className="flex-1 relative w-full h-64 lg:h-80 flex justify-center">
         <div
-          className="relative
+          data-reveal
+          className="from-up relative
           w-[250px] h-[250px]   /* за замовчуванням для мобільних */
           sm:w-full sm:max-w-[320px] sm:aspect-[1/1]  /* з ширини ≥640px */"
         >
           {images.map((src, index) => (
             <img
-              data-reveal
               key={index}
               src={src}
               alt={`Фото ${index + 1}`}
               className={`
         photo-card-img
         absolute inset-0 w-full h-full object-cover rounded-lg shadow-lg
-        transition-transform duration-300
+        transition-transform 
       `}
               data-photo-index={index}
             />
@@ -62,17 +62,17 @@ export default function PhotoCard() {
         .photo-card-img[data-photo-index="0"] {
           left: -80px;
           top: 100px;
-          transform: rotate(-15deg);
+  
         }
         .photo-card-img[data-photo-index="1"] {
           left: 1rem; /* lg:left-8 ~ 2rem */
           top: -5rem;  /* lg:top-4 ~ 1rem */
-          transform: rotate(0deg);
+
         }
         .photo-card-img[data-photo-index="2"] {
           left: 8rem; /* lg:left-16 ~ 4rem */
           top: 2rem;  /* lg:top-8 ~ 2rem */
-          transform: rotate(15deg);
+
         }
 
         /* Hover: зберігаємо початковий поворот, додаємо підняття, невеликий масштаб і великий z-index */

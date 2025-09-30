@@ -6,7 +6,14 @@ function Footer() {
     <footer className="bg-black text-white py-16 px-4 sm:px-8 mt-24">
       <div className="max-w-8xl mx-auto flex flex-row justify-between gap-4 px-0 sm:px-16">
         {/* Лого */}
-        <div className="text-xl font-bold">IVASHKO</div>
+        <div className="text-xl font-bold">
+          <Link
+            href="/"
+            className="flex items-center gap-2 text-2xl font-semibold font-serif text-white"
+          >
+            IVASHKO
+          </Link>
+        </div>
 
         {/* Центр: соцмережі + телефон */}
         <div className="flex flex-col gap-3 ml-auto">

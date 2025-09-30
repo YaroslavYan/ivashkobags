@@ -4,7 +4,7 @@ export default function PhotoCard() {
   const images = ["w2.jpg", "s2.webp", "s3.webp"];
 
   return (
-    <div className="flex flex-col lg:flex-row items-center gap-8 p-8 mt-[80px]">
+    <div className="flex flex-col lg:flex-row items-center gap-8 p-8 mt-[80px] lg:mt-[170px]">
       {/* Ліва частина — текст */}
 
       <div className="flex-1 relative w-full h-64 lg:h-80 flex justify-center">
@@ -137,3 +137,4 @@ export default function PhotoCard() {
     </div>
   );
 }
+

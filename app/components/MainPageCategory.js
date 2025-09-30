@@ -18,7 +18,7 @@ export default function MainPageCategory() {
 
         {/* Центр */}
         <div className="flex flex-1 items-center justify-center">
-          <ul className="md:max-w-[400px] space-y-4 text-[#171717]">
+          <ul className="md:max-w-[500px] space-y-4 text-[#171717]">
             <li>
               <strong>Тоут сумки</strong> — твій надійний напарник у великому
               місті. Просторі й стильні.
@@ -45,3 +45,4 @@ export default function MainPageCategory() {
     </div>
   );
 }
+

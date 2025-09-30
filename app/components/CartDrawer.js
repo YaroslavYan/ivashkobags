@@ -76,7 +76,7 @@ export default function CartDrawer({ products, sessionId }) {
 
         {products.length === 0 ? null : (
           <Link
-            href="/checkout"
+            href="/checkout#checkout-form"
             onClick={closeCart}
             className="mt-auto bg-yellow-500 text-white text-center py-2 rounded sticky bottom-0 "
           >

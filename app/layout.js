@@ -28,6 +28,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="bg-[#f8f5f0] antialiased bg-primary-950 text-primary-100 min-h-screen flex flex-col">
         <CartProvider>
+          {/* Скролити в верх при відкритті нової сторінки */}
           <ScrollToTop />
           <Hero />
 

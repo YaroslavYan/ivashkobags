@@ -46,19 +46,6 @@ export default function ImageSlider() {
 
       {/* затемнення */}
       <div className="absolute inset-0 bg-black/40 z-10 pointer-events-none" />
-
-      {/* точки перемикачі */}
-      {/* <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex gap-2">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrent(index)}
-            className={`w-3 h-3 rounded-full  ${
-              index === current ? "bg-white" : "bg-white/50"
-            }`}
-          />
-        ))}
-      </div> */}
     </div>
   );
 }

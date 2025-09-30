@@ -90,7 +90,7 @@ export default function CheckoutPageClient({
       ) : (
         <div className="grid grid-cols-1 lg:grid-cols-[2fr_2fr] gap-8 p-8  min-h-screen">
           {/* Ліва частина — форма */}
-          <div>
+          <div id="checkout-form">
             <h2 className="text-2xl font-bold mb-6 text-[#171717]">
               Оформлення замовлення
             </h2>
@@ -102,7 +102,7 @@ export default function CheckoutPageClient({
                 <input
                   type="text"
                   className="w-full p-3 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
-                  placeholder="Введіть ваше ім&#39;я"
+                  placeholder="Ім'я та прізвище"
                   value={formData.name}
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
@@ -131,7 +131,7 @@ export default function CheckoutPageClient({
                 </label>
                 <input
                   className="w-full p-3 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
-                  placeholder="Місто, вулиця, будинок, квартира"
+                  placeholder="Місто, вулиця, будинок"
                   value={formData.address}
                   onChange={(e) =>
                     setFormData({ ...formData, address: e.target.value })

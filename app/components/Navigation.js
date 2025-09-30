@@ -11,8 +11,11 @@ import {
 } from "react-icons/fa";
 import { FaShoppingBag } from "react-icons/fa";
 import { useCart } from "../context/CartContext";
+import { useEffect, useState } from "react";
 
 export default function Navigation() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
   const navItems = [
     { href: "/", label: "Головна" },
     { href: "/products", label: "Каталог" },
@@ -23,8 +26,39 @@ export default function Navigation() {
 
   const pathname = usePathname();
 
+  // Відстеження скролу
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <nav className="w-full h-full z-10 text-[#fff] m-0 p-0 hidden md:block">
+      <div
+        className={`fixed top-0 left-0 w-full z-50 flex justify-between items-center h-[80px] px-4 bg-black transform-gpu transition-all duration-500 ease-in-out ${
+          isScrolled
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-full"
+        }`}
+        style={{ willChange: "transform, opacity" }}
+      >
+        <Link
+          href="/"
+          className="flex items-center gap-2 tracking-widest text-2xl font-serif font-semibold ml-[9px] "
+        >
+          IVASHKO <FaShoppingBag size={24} />
+        </Link>
+        <div className="flex items-center gap-4 mr-[72px] ">
+          <button onClick={openCart} className="cursor-pointer">
+            <FaShoppingCart className="hover:text-accent-400" size={24} />
+          </button>
+        </div>
+      </div>
+
       {/* Обгортка для горизонтального вирівнювання */}
       <div
         className="flex border  items-start h-full"
@@ -55,7 +89,10 @@ export default function Navigation() {
               <Link href="#" className="hover:text-accent-400">
                 <FaFacebook size={20} />
               </Link>
-              <Link href="#" className="hover:text-accent-400">
+              <Link
+                href="https://www.instagram.com/ivashko_bags/"
+                className="hover:text-accent-400"
+              >
                 <FaInstagram size={20} />
               </Link>
               <Link href="#" className="hover:text-accent-400">

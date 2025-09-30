@@ -10,7 +10,7 @@ export default function MainPageCategory() {
       >
         {/* Верх */}
         <div className="flex flex-col items-center gap-3 pb-8">
-          <h2 className="text-2xl font-bold mb-4 text-center">
+          <h2 className="text-2xl font-bold mb-4 text-center text-[#171717]">
             Обирай за категоріями
           </h2>
           <span className="h-[22px] border-l-2 w-[1px] border-dotted border-[#0f0f0f]"></span>

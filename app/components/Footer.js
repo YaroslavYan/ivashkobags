@@ -15,7 +15,11 @@ function Footer() {
             <a href="https://facebook.com" target="_blank" rel="noreferrer">
               <FaFacebook className="w-6 h-6 hover:text-gray-400 transition" />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.instagram.com/ivashko_bags/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaInstagram className="w-6 h-6 hover:text-gray-400 transition" />
             </a>
             <a href="https://t.me" target="_blank" rel="noreferrer">

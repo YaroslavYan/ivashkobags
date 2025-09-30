@@ -37,7 +37,7 @@ export default function PhotoCard() {
         className="flex-1 text-center lg:text-left mt-[40px] md:mt-[80px] z-40"
       >
         <div className="flex items-center">
-          <h2 className="text-3xl font-bold mb-4">Про нас</h2>
+          <h2 className="text-3xl font-bold mb-4 text-[#171717]">Про нас</h2>
           <span className="h-[1px] border-t-2 w-[34px] border-dotted border-[#0f0f0f] mt-[-10px] ml-[15px]"></span>
         </div>
 

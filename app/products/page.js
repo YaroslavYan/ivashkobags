@@ -12,7 +12,7 @@ export const metadata = {
 export default async function Page(props) {
   const searchParams = await props.searchParams;
 
-  const cookieStore = await cookies(); // це вже можна викликати синхронно в серверній компоненті
+  const cookieStore = await cookies();
   const sessionId = cookieStore.get("sessionId")?.value;
 
   const productsCart = await getCartItems({ sessionId });

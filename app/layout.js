@@ -1,9 +1,11 @@
+import { cookies } from "next/headers";
 import CartDrawerServer from "./components/CartDrawerServer";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import ScrollToTop from "./components/ScrollToTop";
 import { CartProvider } from "./context/CartContext";
 import "./globals.css";
+import { getCartCount } from "./_lib/data-service";
 
 export const metadata = {
   title: {
@@ -23,14 +25,19 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const cookieStore = await cookies();
+  const sessionId = cookieStore.get("sessionId")?.value;
+
+  const productsCartCount = await getCartCount({ sessionId });
+
   return (
     <html lang="en">
       <body className="bg-[#f8f5f0] antialiased bg-primary-950 text-primary-100 min-h-screen flex flex-col">
         <CartProvider>
           {/* Скролити в верх при відкритті нової сторінки */}
           <ScrollToTop />
-          <Hero />
+          <Hero productsCartCount={productsCartCount} />
 
           <div className="flex-1 px-0 md:px-8 py-12 grid">
             <main

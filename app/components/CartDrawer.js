@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useCart } from "../context/CartContext";
 import { removeFromCartAction } from "../_lib/actions";
 import Link from "next/link";
-import { FaTrash, FaTimes } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
 
 export default function CartDrawer({ products, sessionId }) {
   const { isCartOpen, closeCart } = useCart();
@@ -67,7 +67,7 @@ export default function CartDrawer({ products, sessionId }) {
                   onClick={() => removeProduct(item.products.id)}
                   className="cursor-pointer mt-auto"
                 >
-                  <FaTrash className="text-red-400" />
+                  <FaTimes className="text-red-400" />
                 </button>
               </li>
             ))}

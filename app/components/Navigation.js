@@ -13,7 +13,7 @@ import { FaShoppingBag } from "react-icons/fa";
 import { useCart } from "../context/CartContext";
 import { useEffect, useState } from "react";
 
-export default function Navigation() {
+export default function Navigation({ productsCartCount }) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const navItems = [
@@ -53,8 +53,17 @@ export default function Navigation() {
           IVASHKO <FaShoppingBag size={24} />
         </Link>
         <div className="flex items-center gap-4 mr-[72px] ">
-          <button onClick={openCart} className="cursor-pointer">
+          <button onClick={openCart} className="relative cursor-pointer">
             <FaShoppingCart className="hover:text-accent-400" size={24} />
+
+            {productsCartCount > 0 && (
+              <span
+                className="absolute -top-2 -right-4 bg-red-300 text-white text-xs w-5 h-5 flex items-center justify-center rounded-sm font-semibold"
+                aria-label={`${productsCartCount} items in cart`}
+              >
+                {productsCartCount > 99 ? "99+" : productsCartCount}
+              </span>
+            )}
           </button>
         </div>
       </div>
@@ -105,8 +114,17 @@ export default function Navigation() {
               className="flex items-center justify-center gap-6 w-[200px] h-[100px] border-b border-l"
               style={{ borderColor: "rgba(255,255,255,0.2)" }}
             >
-              <button onClick={openCart} className="cursor-pointer">
+              <button onClick={openCart} className="relative cursor-pointer">
                 <FaShoppingCart className="hover:text-accent-400" size={24} />
+
+                {productsCartCount > 0 && (
+                  <span
+                    className="absolute -top-2 -right-4 bg-red-300 text-white text-xs w-5 h-5 flex items-center justify-center rounded-sm font-semibold"
+                    aria-label={`${productsCartCount} items in cart`}
+                  >
+                    {productsCartCount > 99 ? "99+" : productsCartCount}
+                  </span>
+                )}
               </button>
               {/* <Link href="/login" className="hover:text-accent-400">
                 <FaUser size={24} />
@@ -125,7 +143,7 @@ export default function Navigation() {
                 className="relative w-full flex items-center justify-center"
               >
                 {pathname === href && (
-                  <span className="absolute left-[-25px] h-[1px] border-t-2 w-[34px] border-dotted border-[#ffffff]"></span>
+                  <span className="left-[-25px] h-[1px] border-t-2 w-[45px] mr-[10px] border-dotted border-[#ffffff]"></span>
                 )}
                 <Link
                   href={href}

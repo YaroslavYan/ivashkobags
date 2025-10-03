@@ -33,3 +33,5 @@ export function getOrCreateSessionId() {
 
   return sessionId;
 }
+
+// повертає лише сумарну кількість, а не весь масив

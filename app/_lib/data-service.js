@@ -72,6 +72,23 @@ export async function getCartItems({ userId, sessionId }) {
   return data;
 }
 
+export async function getCartCount({ userId, sessionId }) {
+  const filterKey = userId ? "userId" : "sessionId";
+  const filterValue = userId ?? sessionId;
+  if (!filterValue) return 0;
+
+  const { count, error } = await supabase
+    .from("cartItems")
+    .select("id", { count: "exact", head: true }) // head:true повертає лише count, без рядків
+    .eq(filterKey, filterValue);
+
+  if (error) {
+    console.error(error);
+    return 0;
+  }
+  return count || 0;
+}
+
 export async function getProductById(id, locale = "pl") {
   const { data, error } = await supabase
     .from("products")

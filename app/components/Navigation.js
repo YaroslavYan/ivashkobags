@@ -134,20 +134,39 @@ export default function Navigation({ productsCartCount }) {
 
           {/* Вертикальне меню під "кошиком + користувачем" */}
           <ul
-            className="flex flex-col items-center justify-center gap-6 w-[200px] min-h-[300px] border-l border-b text-xl px-4"
+            className="relative flex flex-col items-center justify-center gap-6 w-[200px] min-h-[300px] border-l border-b text-xl px-4"
             style={{ borderColor: "rgba(255,255,255,0.2)" }}
           >
+            {["/", "/products", "/about"].includes(pathname) && (
+              <span
+                className="absolute left-[-15px] border-t-2 border-dotted border-white w-[45px] transition-all duration-500 ease-in-out"
+                style={{
+                  top: (() => {
+                    switch (pathname) {
+                      case "/":
+                        return "4.8rem";
+                      case "/products":
+                        return "9.3rem";
+                      case "/about":
+                        return "14rem";
+                    }
+                  })(),
+                }}
+              />
+            )}
+
             {navItems.map(({ href, label }) => (
               <li
                 key={href}
-                className="relative w-full flex items-center justify-center"
+                className="w-full flex items-center justify-center h-[3rem]"
               >
-                {pathname === href && (
-                  <span className="left-[-25px] h-[1px] border-t-2 w-[45px] mr-[10px] border-dotted border-[#ffffff]"></span>
-                )}
                 <Link
                   href={href}
-                  className={`transition-colors hover:text-gray-300`}
+                  className={`transition-transform duration-500 ease-in-out hover:text-gray-300`}
+                  style={{
+                    transform:
+                      pathname === href ? "translateX(10px)" : "translateX(0)",
+                  }}
                 >
                   {label}
                 </Link>

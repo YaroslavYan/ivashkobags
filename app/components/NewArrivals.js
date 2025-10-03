@@ -13,11 +13,11 @@ export default async function NewArrivals() {
 
   return (
     <section className="my-8 sm:px-6 lg:px-8">
-      <div className="flex flex-col items-center gap-3 pb-8 ">
+      <div className="flex items-center gap-3 pb-8 ml-[15px] sm:ml-0">
+        <span className=" h-[2px] border-t-2 w-[34px] border-dotted border-[#0f0f0f] mt-[-19px]"></span>
         <h2 className="text-2xl font-bold mb-4 text-center text-[#171717]">
           Рекомендоване
         </h2>
-        <span className=" h-[22px] border-l-2 w-[1px] border-dotted border-[#0f0f0f]"></span>
       </div>
       <div
         data-reveal

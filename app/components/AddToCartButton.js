@@ -125,7 +125,7 @@ export default function AddToCartButton({ id, variant, inCart }) {
       <button
         onClick={handleClick}
         disabled={loading}
-        className={`w-80 p-4 rounded cursor-pointer transition duration-300 ease-in-out flex items-center justify-center ${
+        className={`w-80 h-[55px] p-4 rounded cursor-pointer transition duration-300 ease-in-out flex items-center justify-center ${
           optimisticInCart
             ? "bg-red-600 text-white hover:bg-red-700"
             : "bg-[#111] text-white hover:bg-gray-500"

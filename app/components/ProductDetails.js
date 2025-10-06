@@ -15,10 +15,13 @@ export default async function ProductDetails({ product, inCart }) {
         data-reveal
         className="flex-1 flex flex-col gap-4 from-right items-center "
       >
-        <h1 className="text-2xl font-bold text-[#111]">{product?.title}</h1>
-        <p className="text-xl font-semibold text-[#111]">
-          {product?.price} грн
-        </p>
+        <div className="mt-6 w-80">
+          <h1 className="text-4xl font-bold text-[#111]">{product?.title}</h1>
+          <p className="text-xl font-semibold text-[#111] pt-[20px] pb-[10px]">
+            {product?.price} грн
+          </p>
+        </div>
+
         {/* <button className="w-80 p-4 bg-[#111] text-white  rounded hover:bg-gray-500 cursor-pointer transition duration-300 ease-in-out">
           ДОДАТИ В КОШИК
         </button> */}

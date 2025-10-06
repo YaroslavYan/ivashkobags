@@ -6,7 +6,7 @@ import { FaShoppingCart, FaBars, FaTimes } from "react-icons/fa";
 import { useCart } from "../context/CartContext";
 import { usePathname } from "next/navigation";
 
-export default function MobileNavigation() {
+export default function MobileNavigation({ productsCartCount }) {
   const navItems = [
     { href: "/", label: "Головна" },
     { href: "/products", label: "Каталог" },
@@ -56,6 +56,14 @@ export default function MobileNavigation() {
         <div className="flex items-center gap-4">
           <button onClick={openCart} className="cursor-pointer text-white ">
             <FaShoppingCart size={24} />
+            {productsCartCount > 0 && (
+              <span
+                className="absolute -top-[-18px] -right-[-45px] bg-red-300 text-white text-xs w-5 h-5 flex items-center justify-center rounded-sm font-semibold"
+                aria-label={`${productsCartCount} items in cart`}
+              >
+                {productsCartCount > 99 ? "99+" : productsCartCount}
+              </span>
+            )}
           </button>
 
           <button
@@ -90,12 +98,12 @@ export default function MobileNavigation() {
             </li>
           ))}
         </ul>
-        <button
+        {/* <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           style={{ color: "white" }}
         >
           {isMenuOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
-        </button>
+        </button> */}
       </div>
     </div>
   );

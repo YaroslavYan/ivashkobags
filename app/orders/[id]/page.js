@@ -1,4 +1,5 @@
 import { getOrderById } from "@/app/_lib/data-service";
+import ManualBlikPayment from "@/app/checkout/ManualBlikPayment";
 import { cookies } from "next/headers";
 import Link from "next/link";
 // import { supabase } from "@/app/_lib/supabase"; // або де в тебе серверний supabase client
@@ -37,9 +38,7 @@ export default async function OrderPage({ params }) {
           Дякуємо за ваше замовлення!
         </h1>
 
-        {/* <p className="mb-2">
-          Номер замовлення: <strong>{order.id}</strong>
-        </p> */}
+        <ManualBlikPayment />
         <p className="mb-4 text-[#171717]">
           Імя: <strong>{order.contactName}</strong>
         </p>
@@ -70,12 +69,6 @@ export default async function OrderPage({ params }) {
           <Link href="/" className="px-4 py-2 bg-gray-200 rounded">
             На головну
           </Link>
-          {/* <Link
-            href="/orders"
-            className="px-4 py-2 bg-black text-white rounded"
-          >
-            Мої замовлення
-          </Link> */}
         </div>
       </div>
     </div>

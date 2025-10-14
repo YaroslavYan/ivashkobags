@@ -48,9 +48,10 @@ export default function Navigation({ productsCartCount }) {
       >
         <Link
           href="/"
-          className="flex items-center gap-2 tracking-widest text-2xl font-serif font-semibold ml-[9px] "
+          className="flex items-center gap-2 tracking-widest text-2xl ml-[9px] "
         >
-          IVASHKO <FaShoppingBag size={24} />
+          IVASHKO
+          {/* <FaShoppingBag size={24} /> */}
         </Link>
         <div className="flex items-center gap-4 mr-[72px] ">
           <button onClick={openCart} className="relative cursor-pointer">
@@ -82,7 +83,8 @@ export default function Navigation({ productsCartCount }) {
             href="/"
             className="flex items-center gap-2 tracking-widest text-2xl font-serif font-semibold"
           >
-            IVASHKO <FaShoppingBag size={24} />
+            IVASHKO
+            {/* <FaShoppingBag size={24} /> */}
           </Link>
         </div>
 

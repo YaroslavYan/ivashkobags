@@ -14,7 +14,6 @@ function Footer() {
             IVASHKO
           </Link>
         </div>
-
         {/* Центр: соцмережі + телефон */}
         <div className="flex flex-col gap-3 ml-auto">
           {/* Іконки соцмереж */}
@@ -35,8 +34,12 @@ function Footer() {
           </div>
 
           {/* Телефон */}
-          <a href="tel:+380970000000" className="text-sm">
-            +38 (097) 00-00-00
+          <a href="tel:+48513285071" className="text-sm ml-auto">
+            +48 513 285 071
+          </a>
+
+          <a href="mailto:ivashkobags@gmail.com" className="text-sm">
+            ivashkobags@gmail.com
           </a>
         </div>
       </div>

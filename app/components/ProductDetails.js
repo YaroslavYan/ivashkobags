@@ -37,18 +37,31 @@ export default async function ProductDetails({ product, inCart }) {
           </h2>
           <span className="block border-b border-black w-full"></span>
           <ul className="space-y-1 text-gray-700">
-            <li className="pt-3 pb-3">ВИСОТА: {product.height}</li>
+            <li className="pt-3 pb-3">
+              <span className="font-bold">ВИСОТА:</span> {product.height} см.
+            </li>
             <span className="block border-b border-black w-full"></span>
-            <li className="pt-3 pb-3">ШИРИНА: {product.width}</li>
+
+            <li className="pt-3 pb-3">
+              <span className="font-bold">ШИРИНА:</span> {product.width} см.
+            </li>
             <span className="block border-b border-black w-full"></span>
-            <li className="pt-3 pb-3">ГЛИБИНА: {product.depth}</li>
+
+            <li className="pt-3 pb-3">
+              <span className="font-bold">ГЛИБИНА:</span> {product.depth} см.
+            </li>
             <span className="block border-b border-black w-full"></span>
-            <li className="pt-3">МАТЕРІАЛ: {product.material}</li>
+
+            <li className="pt-3">
+              <span className="font-bold">МАТЕРІАЛ:</span> {product.material}
+            </li>
           </ul>
         </div>
 
         <div className="mt-6 w-80">
-          <h2 className="pb-3 text-lg font-semibold mb-2">ОПИС ТОВАРУ:</h2>
+          <h2 className="pb-3 text-lg font-semibold mb-2 text-[#111]">
+            ОПИС ТОВАРУ:
+          </h2>
           <p className="text-gray-700">{product.description}</p>
         </div>
       </div>

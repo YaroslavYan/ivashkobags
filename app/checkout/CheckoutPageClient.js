@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { FaTrash } from "react-icons/fa";
-import { addOrderAction, removeFromCartAction } from "../_lib/actions";
+import { addOrderAction } from "../_lib/actions";
 import { useRouter } from "next/navigation";
 import SpinnerMini from "../components/SpinnerMini";
 
@@ -156,7 +155,7 @@ export default function CheckoutPageClient({
 
               {paymentMethods.map((option, index) => (
                 <div key={option.name} className="border-b last:border-b-0">
-                  <label className="flex items-center gap-3 p-4 cursor-pointer">
+                  <label className="flex items-center gap-3 p-4 cursor-pointer pl-0">
                     <input
                       type="radio"
                       name="payment"

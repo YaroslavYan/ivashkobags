@@ -7,13 +7,29 @@ import { CartProvider } from "./context/CartContext";
 import "./globals.css";
 import { getCartCount } from "./_lib/data-service";
 
+import { Poppins, Montserrat } from "next/font/google";
+
+// Основний текст
+const poppins = Poppins({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600"],
+  variable: "--font-poppins",
+});
+
+// Заголовки
+const montserrat = Montserrat({
+  subsets: ["latin", "latin-ext"],
+  weight: ["600", "700"],
+  variable: "--font-montserrat",
+});
+
 export const metadata = {
   title: {
     default: "Магазин сумок | Ivashko",
     template: "%s | Ivashko", // підставить назву сторінки
   },
   description:
-    "Інтернет-магазин стильних жіночих і чоловічих сумок з доставкою по Україні.",
+    "Інтернет-магазин стильних жіночих і чоловічих сумок з доставкою по Польщі.",
   metadataBase: new URL("https://example.com"),
   openGraph: {
     title: "Магазин сумок Ivashko",
@@ -32,7 +48,7 @@ export default async function RootLayout({ children }) {
   const productsCartCount = await getCartCount({ sessionId });
 
   return (
-    <html lang="en">
+    <html lang="en" className={`${poppins.variable} ${montserrat.variable}`}>
       <body className="bg-[#f8f5f0] antialiased bg-primary-950 text-primary-100 min-h-screen flex flex-col">
         <CartProvider>
           {/* Скролити в верх при відкритті нової сторінки */}
@@ -50,6 +66,7 @@ export default async function RootLayout({ children }) {
 
           <CartDrawerServer />
         </CartProvider>
+
         <Footer />
       </body>
     </html>

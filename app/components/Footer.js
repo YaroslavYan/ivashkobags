@@ -12,7 +12,10 @@ function Footer() {
             className="flex items-center gap-2 text-2xl font-semibold font-serif text-white"
           >
             {/* IVASHKO */}
-            <img src="logo.png" className="w-[200px]" />
+            <img
+              src="logo.png"
+              className="md:w-[200px] sm:w-[180px] w-[150px]"
+            />
           </Link>
         </div>
         {/* Центр: соцмережі + телефон */}

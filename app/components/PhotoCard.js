@@ -12,7 +12,7 @@ export default function PhotoCard() {
           data-reveal
           className="from-up relative
           w-[250px] h-[250px]   /* за замовчуванням для мобільних */
-          sm:w-full sm:max-w-[320px] sm:aspect-[1/1]  /* з ширини ≥640px */"
+          sm:w-[320px] sm:h-[320px] sm:aspect-[1/1]  /* з ширини ≥640px */"
         >
           {images.map((src, index) => (
             <img
@@ -37,13 +37,16 @@ export default function PhotoCard() {
         className="flex-1 text-center lg:text-left mt-[40px] md:mt-[80px] z-40"
       >
         <div className="flex items-center">
-          <h2 className="text-3xl font-bold mb-4 text-[#171717]">Про нас</h2>
+          <h2 className="text-3xl font-bold mb-4 text-[#171717]">O nas</h2>
           <span className="h-[1px] border-t-2 w-[34px] border-dotted border-[#0f0f0f] mt-[-10px] ml-[15px]"></span>
         </div>
 
         <p className="text-gray-700 text-lg">
-          Тут можна написати опис, наприклад, цікаву інформацію про продукт чи
-          фотографії.
+          W naszym sklepie dajemy drugie życie Twoim ubraniom! 🌿 Przerabiamy
+          stare, nieużywane ciuchy w stylowe torby, które łączą modę z ekologią.
+          Każda torba ma swoją historię i charakter, a Ty możesz mieć wyjątkowy
+          dodatek stworzony z pasją. Twój styl, nasza kreatywność — razem
+          tworzymy coś niepowtarzalnego!
         </p>
       </div>
       <RevealOnScroll />

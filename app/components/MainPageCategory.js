@@ -11,7 +11,7 @@ export default function MainPageCategory() {
         {/* Верх */}
         <div className="flex flex-col items-center gap-3 pb-8">
           <h2 className="text-2xl font-bold mb-4 text-center text-[#171717]">
-            Обирай за категоріями
+            Wybieraj według kategorii
           </h2>
           <span className="h-[22px] border-l-2 w-[1px] border-dotted border-[#0f0f0f]"></span>
         </div>
@@ -20,16 +20,16 @@ export default function MainPageCategory() {
         <div className="flex flex-1 items-center justify-center">
           <ul className="md:max-w-[400px] space-y-4 text-[#171717]">
             <li>
-              <strong>Тоут сумки</strong> — твій надійний напарник у великому
-              місті. Просторі й стильні.
+              <strong>Torby typu tote</strong> — Twój niezawodny towarzysz w
+              dużym mieście. Przestronne i stylowe.
             </li>
             <li>
-              <strong>Шопер / Торба</strong> — для прогулянок, покупок і пригод.
-              Легкі, з характером.
+              <strong>Shopper / Torba</strong> — na spacery, zakupy i przygody.
+              Lekkie, z charakterem.
             </li>
             <li>
-              <strong>Міні сумочки / Хінкальні куб</strong> — маленькі, але з
-              великим настроєм. Додають родзинку образу.
+              <strong>Mini torebki / Hinkalne kub</strong> — małe, ale z wielkim
+              temperamentem. Dodają pikanterii Twojemu lookowi.
             </li>
           </ul>
         </div>

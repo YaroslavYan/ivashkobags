@@ -16,7 +16,7 @@ export default async function NewArrivals() {
       <div className="flex items-center gap-3 pb-8 ml-[15px] sm:ml-0">
         <span className=" h-[2px] border-t-2 w-[34px] border-dotted border-[#0f0f0f] mt-[-19px]"></span>
         <h2 className="text-2xl font-bold mb-4 text-center text-[#171717]">
-          Рекомендоване
+          Polecane
         </h2>
       </div>
       <div

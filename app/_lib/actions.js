@@ -77,7 +77,7 @@ export async function addOrderAction({
         comment,
         paymentType: payment,
         totalAmount: computedTotal,
-        status: "Обробляється",
+        status: "Нове",
       },
     ])
     .select()

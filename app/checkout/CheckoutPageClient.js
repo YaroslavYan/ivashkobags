@@ -87,9 +87,9 @@ export default function CheckoutPageClient({
           </p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-[2fr_2fr] gap-8 p-8  min-h-screen">
+        <div className="grid grid-cols-1 lg:grid-cols-[2fr_2fr] gap-8 p-8  min-h-screen scroll-mt-24">
           {/* Ліва частина — форма */}
-          <div id="checkout-form">
+          <div>
             <h2 className="text-2xl font-bold mb-6 text-[#171717]">
               Оформлення замовлення
             </h2>

@@ -20,13 +20,13 @@ function HeaderOverlay({ productsCartCount }) {
             data-reveal
             className="text-white font-bold text-xl md:text-2xl lg:text-3xl [@media(max-width:360px)]:text-sm from-right"
           >
-            Сумки з історією. Твій стиль із новим подихом.
+            Torebki z historią. Twój styl z nowym oddechem.
           </h1>
           <p
             data-reveal
             className="text-white text-sm md:text-base lg:text-lg [@media(max-width:360px)]:text-xs from-left"
           >
-            Друге життя одягу — перша любов до сумок.
+            Drugie życie ubrań — pierwsza miłość do torebek.
           </p>
         </div>
         <RevealOnScroll />

@@ -11,7 +11,8 @@ function Footer() {
             href="/"
             className="flex items-center gap-2 text-2xl font-semibold font-serif text-white"
           >
-            IVASHKO
+            {/* IVASHKO */}
+            <img src="logo.png" className="w-[200px]" />
           </Link>
         </div>
         {/* Центр: соцмережі + телефон */}
@@ -34,11 +35,17 @@ function Footer() {
           </div>
 
           {/* Телефон */}
-          <a href="tel:+48513285071" className="text-sm ml-auto">
+          <a
+            href="tel:+48513285071"
+            className="text-sm ml-auto hover:text-gray-400 transition"
+          >
             +48 513 285 071
           </a>
 
-          <a href="mailto:ivashkobags@gmail.com" className="text-sm">
+          <a
+            href="mailto:ivashkobags@gmail.com"
+            className="text-sm hover:text-gray-400 transition"
+          >
             ivashkobags@gmail.com
           </a>
         </div>
@@ -53,10 +60,10 @@ function Footer() {
       {/* Нижні посилання */}
       <div className="max-w-8xl mx-auto flex justify-end gap-6 text-sm mt-[50px] px-0 sm:px-16">
         <Link href="/delivery" className="hover:text-gray-400 transition">
-          Оплата та доставка
+          Płatność i dostawa
         </Link>
         <Link href="/privacy" className="hover:text-gray-400 transition">
-          Політика конфіденційності
+          Polityka prywatności
         </Link>
       </div>
     </footer>

@@ -9,6 +9,10 @@ export default async function Page() {
   const products = await getCartItems({ sessionId });
 
   return (
-    <CheckoutPageClient initialCartItems={products} sessionId={sessionId} />
+    <CheckoutPageClient
+      initialCartItems={products}
+      sessionId={sessionId}
+      id="checkout-form"
+    />
   );
 }

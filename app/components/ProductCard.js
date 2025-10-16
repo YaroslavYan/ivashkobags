@@ -9,7 +9,11 @@ export default function ProductCard({ image, title, price, id, inCart }) {
     >
       <Link href={`/product/${id}`}>
         <div className="aspect-[4/5] w-full">
-          <img src={image} alt={title} className="w-full h-full object-cover" />
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-110"
+          />
         </div>
       </Link>
 

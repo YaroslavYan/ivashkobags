@@ -7,9 +7,9 @@ import {
   FaInstagram,
   FaShoppingCart,
   FaTelegram,
-  FaUser,
+  // FaUser,
 } from "react-icons/fa";
-import { FaShoppingBag } from "react-icons/fa";
+// import { FaShoppingBag } from "react-icons/fa";
 import { useCart } from "../context/CartContext";
 import { useEffect, useState } from "react";
 
@@ -17,9 +17,9 @@ export default function Navigation({ productsCartCount }) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const navItems = [
-    { href: "/", label: "Головна" },
-    { href: "/products", label: "Каталог" },
-    { href: "/about", label: "Про нас" },
+    { href: "/", label: "Strona główna" },
+    { href: "/products", label: "Katalog" },
+    { href: "/about", label: "O nas" },
   ];
 
   const { openCart } = useCart();
@@ -50,7 +50,8 @@ export default function Navigation({ productsCartCount }) {
           href="/"
           className="flex items-center gap-2 tracking-widest text-2xl ml-[9px] "
         >
-          IVASHKO
+          {/* IVASHKO */}
+          <img src="logo-left.png" className="w-[200px]" />
           {/* <FaShoppingBag size={24} /> */}
         </Link>
         <div className="flex items-center gap-4 mr-[72px] ">
@@ -83,7 +84,8 @@ export default function Navigation({ productsCartCount }) {
             href="/"
             className="flex items-center gap-2 tracking-widest text-2xl font-serif font-semibold"
           >
-            IVASHKO
+            {/* IVASHKO */}
+            <img src="logo-left.png" className="w-[230px]" />
             {/* <FaShoppingBag size={24} /> */}
           </Link>
         </div>
@@ -97,23 +99,29 @@ export default function Navigation({ productsCartCount }) {
               className="flex items-center justify-center gap-4 w-[200px] h-[100px] border-b border-l"
               style={{ borderColor: "rgba(255,255,255,0.2)" }}
             >
-              <Link href="#" className="hover:text-accent-400">
+              <Link
+                href="#"
+                className="hover:text-accent-400 hover:text-gray-400 transition"
+              >
                 <FaFacebook size={20} />
               </Link>
               <Link
                 href="https://www.instagram.com/ivashko_bags/"
-                className="hover:text-accent-400"
+                className="hover:text-accent-400 hover:text-gray-400 transition"
               >
                 <FaInstagram size={20} />
               </Link>
-              <Link href="#" className="hover:text-accent-400">
+              <Link
+                href="#"
+                className="hover:text-accent-400 hover:text-gray-400 transition"
+              >
                 <FaTelegram size={20} />
               </Link>
             </div>
 
             {/* Кошик + користувач */}
             <div
-              className="flex items-center justify-center gap-6 w-[200px] h-[100px] border-b border-l"
+              className="flex items-center justify-center gap-6 w-[200px] h-[100px] border-b border-l hover:text-gray-400 transition"
               style={{ borderColor: "rgba(255,255,255,0.2)" }}
             >
               <button onClick={openCart} className="relative cursor-pointer">

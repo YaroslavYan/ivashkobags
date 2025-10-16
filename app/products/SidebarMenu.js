@@ -55,8 +55,8 @@ export default function SidebarMenu({ variant = "products" }) {
           <li key={cat.slug}>
             <button
               onClick={() => handleClick(cat.slug)}
-              className={`flex items-center gap-2 w-full text-left pr-4 py-2 rounded cursor-pointer transition-colors hover:text-gray-400
-              ${variant === "main" ? "flex-col lg:flex-row" : "flex-row"}`}
+              className={`group flex items-center gap-2 w-full text-left pr-4 py-2 rounded cursor-pointer transition-colors hover:text-gray-400
+  ${variant === "main" ? "flex-col lg:flex-row" : "flex-row"}`}
             >
               <div className="relative">
                 <img src={cat.image} alt={cat.name} className={imgClasses} />
@@ -67,9 +67,7 @@ export default function SidebarMenu({ variant = "products" }) {
                 )}
               </div>
               <span
-                className={
-                  variant === "main" ? "ml-0 lg:ml-[15px]" : "ml-[10px]"
-                }
+                className={`relative ml-[10px] lg:ml-[15px] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[gold] after:transition-all after:duration-300 group-hover:after:w-full`}
               >
                 {cat.name}
               </span>

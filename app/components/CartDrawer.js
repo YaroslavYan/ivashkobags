@@ -65,9 +65,9 @@ export default function CartDrawer({ products, sessionId }) {
 
                 <button
                   onClick={() => removeProduct(item.products.id)}
-                  className="cursor-pointer mt-auto"
+                  className="cursor-pointer mt-auto "
                 >
-                  <FaTimes className="text-red-400" />
+                  <FaTimes className="text-red-400 hover:text-red-500 transition" />
                 </button>
               </li>
             ))}

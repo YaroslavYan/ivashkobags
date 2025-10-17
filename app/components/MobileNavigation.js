@@ -8,11 +8,11 @@ import { usePathname } from "next/navigation";
 
 export default function MobileNavigation({ productsCartCount }) {
   const navItems = [
-    { href: "/", label: "Головна" },
-    { href: "/products", label: "Каталог" },
-    { href: "/about", label: "Про нас" },
+    { href: "/", label: "Strona główna" },
+    { href: "/products", label: "Katalog" },
+    { href: "/blog", label: "Nasz blog" },
+    { href: "/about", label: "O nas" },
   ];
-
   const { openCart } = useCart();
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);

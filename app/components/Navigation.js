@@ -19,6 +19,7 @@ export default function Navigation({ productsCartCount }) {
   const navItems = [
     { href: "/", label: "Strona główna" },
     { href: "/products", label: "Katalog" },
+    { href: "/blog", label: "Nasz blog" },
     { href: "/about", label: "O nas" },
   ];
 
@@ -101,19 +102,19 @@ export default function Navigation({ productsCartCount }) {
             >
               <Link
                 href="#"
-                className="hover:text-accent-400 hover:text-gray-400 transition"
+                className="hover:text-accent-400 hover:text-gray-300 transition"
               >
                 <FaFacebook size={20} />
               </Link>
               <Link
                 href="https://www.instagram.com/ivashko_bags/"
-                className="hover:text-accent-400 hover:text-gray-400 transition"
+                className="hover:text-accent-400 hover:text-gray-300 transition"
               >
                 <FaInstagram size={20} />
               </Link>
               <Link
                 href="#"
-                className="hover:text-accent-400 hover:text-gray-400 transition"
+                className="hover:text-accent-400 hover:text-gray-300 transition"
               >
                 <FaTelegram size={20} />
               </Link>
@@ -121,7 +122,7 @@ export default function Navigation({ productsCartCount }) {
 
             {/* Кошик + користувач */}
             <div
-              className="flex items-center justify-center gap-6 w-[200px] h-[100px] border-b border-l hover:text-gray-400 transition"
+              className="flex items-center justify-center gap-6 w-[200px] h-[100px] border-b border-l hover:text-gray-300 transition"
               style={{ borderColor: "rgba(255,255,255,0.2)" }}
             >
               <button onClick={openCart} className="relative cursor-pointer">
@@ -147,18 +148,20 @@ export default function Navigation({ productsCartCount }) {
             className="relative flex flex-col items-center justify-center gap-6 w-[200px] min-h-[300px] border-l border-b text-xl px-4"
             style={{ borderColor: "rgba(255,255,255,0.2)" }}
           >
-            {["/", "/products", "/about"].includes(pathname) && (
+            {["/", "/products", "/about", "/blog"].includes(pathname) && (
               <span
                 className="absolute left-[-15px] border-t-2 border-dotted border-white w-[45px] transition-all duration-500 ease-in-out"
                 style={{
                   top: (() => {
                     switch (pathname) {
                       case "/":
-                        return "4.8rem";
+                        return "2.5rem";
                       case "/products":
-                        return "9.3rem";
+                        return "7.1rem";
+                      case "/blog":
+                        return "11.5rem";
                       case "/about":
-                        return "14rem";
+                        return "16rem";
                     }
                   })(),
                 }}

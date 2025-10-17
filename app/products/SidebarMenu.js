@@ -55,7 +55,7 @@ export default function SidebarMenu({ variant = "products" }) {
           <li key={cat.slug}>
             <button
               onClick={() => handleClick(cat.slug)}
-              className={`group flex items-center gap-2 w-full text-left pr-4 py-2 rounded cursor-pointer transition-colors hover:text-gray-400
+              className={`group flex items-center gap-2 w-full text-left pr-4 py-2 rounded cursor-pointer transition-colors hover:text-gray-300
   ${variant === "main" ? "flex-col lg:flex-row" : "flex-row"}`}
             >
               <div className="relative">

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import RevealOnScroll from "./RevealOnScroll";
 
 export default function PhotoCard() {
@@ -41,12 +42,19 @@ export default function PhotoCard() {
           <span className="h-[1px] border-t-2 w-[34px] border-dotted border-[#0f0f0f] mt-[-10px] ml-[15px]"></span>
         </div>
 
-        <p className="text-gray-700 text-lg border-l-4 border-l-[gold] pl-0.5">
+        <p className="text-gray-700 text-lg border-l-4 border-l-[#FEB83F] pl-0.5">
           W naszym sklepie dajemy drugie życie Twoim ubraniom! 🌿 Przerabiamy
           stare, nieużywane ciuchy w stylowe torby, które łączą modę z ekologią.
           Każda torba ma swoją historię i charakter, a Ty możesz mieć wyjątkowy
           dodatek stworzony z pasją. Twój styl, nasza kreatywność — razem
           tworzymy coś niepowtarzalnego!
+          <Link
+            href={`/about`}
+            className="relative inline-block text-blue-600 font-medium group"
+          >
+            Czytaj dalej →
+            <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-600 transition-all duration-500 group-hover:w-full"></span>
+          </Link>
         </p>
       </div>
       <RevealOnScroll />

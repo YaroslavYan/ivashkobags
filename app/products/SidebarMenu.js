@@ -67,7 +67,7 @@ export default function SidebarMenu({ variant = "products" }) {
                 )}
               </div>
               <span
-                className={`relative ml-[10px] lg:ml-[15px] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[gold] after:transition-all after:duration-300 group-hover:after:w-full`}
+                className={`relative ml-[10px] lg:ml-[15px] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#FEB83F] after:transition-all after:duration-300 group-hover:after:w-full`}
               >
                 {cat.name}
               </span>

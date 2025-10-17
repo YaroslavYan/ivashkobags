@@ -24,7 +24,7 @@ function HeaderOverlay({ productsCartCount }) {
           </h1>
           <p
             data-reveal
-            className="text-[gold] text-sm md:text-base lg:text-lg [@media(max-width:360px)]:text-xs from-left"
+            className="text-[#FEB83F] text-sm md:text-base lg:text-lg [@media(max-width:360px)]:text-xs from-left"
           >
             Drugie życie ubrań — pierwsza miłość do torebek.
           </p>

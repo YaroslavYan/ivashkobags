@@ -88,7 +88,7 @@ export default function BlogPage() {
                 <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-600 transition-all duration-500 group-hover:w-full"></span>
               </Link>
             </div>
-            <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[gold] transition-all duration-500 group-hover:w-full z-10" />
+            <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#FEB83F] transition-all duration-500 group-hover:w-full z-10" />
           </div>
         ))}
       </div>

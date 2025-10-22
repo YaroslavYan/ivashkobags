@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   FaFacebook,
@@ -12,6 +13,8 @@ import {
 // import { FaShoppingBag } from "react-icons/fa";
 import { useCart } from "../context/CartContext";
 import { useEffect, useState } from "react";
+
+import logo from "../../public/logo-left.png"; // шлях до картинки у папці public або імпорт через module
 
 export default function Navigation({ productsCartCount }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -52,7 +55,13 @@ export default function Navigation({ productsCartCount }) {
           className="flex items-center gap-2 tracking-widest text-2xl ml-[9px] "
         >
           {/* IVASHKO */}
-          <img src="logo-left.png" className="w-[200px]" />
+          <Image
+            src={logo}
+            alt="Logo"
+            width={200} // ширина
+            height={50} // висота
+            className="w-[200px]"
+          />
           {/* <FaShoppingBag size={24} /> */}
         </Link>
         <div className="flex items-center gap-4 mr-[72px] ">

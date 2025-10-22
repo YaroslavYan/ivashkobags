@@ -1,5 +1,7 @@
 import { FaFacebook, FaInstagram, FaTelegram } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
+import logo from "../../public/logo.png";
 
 function Footer() {
   return (
@@ -12,10 +14,11 @@ function Footer() {
             className="flex items-center gap-2 text-2xl font-semibold font-serif text-white"
           >
             {/* IVASHKO */}
-            <img
+            {/* <img
               src="logo.png"
               className="md:w-[200px] sm:w-[180px] w-[150px]"
-            />
+            /> */}
+            <Image src={logo} alt="IVASHKO Logo" width={200} height={50} />
           </Link>
         </div>
         {/* Центр: соцмережі + телефон */}

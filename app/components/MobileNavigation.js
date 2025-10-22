@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { FaShoppingCart, FaBars, FaTimes } from "react-icons/fa";
 import { useCart } from "../context/CartContext";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
+import logo from "../../public/logo-left.png";
 
 export default function MobileNavigation({ productsCartCount }) {
   const navItems = [
@@ -50,7 +52,8 @@ export default function MobileNavigation({ productsCartCount }) {
           href="/"
           className="flex items-center gap-2 text-2xl font-semibold font-serif text-white"
         >
-          <img src="logo-left.png" className="w-[180px]" />
+          <Image src={logo} alt="IVASHKO Logo" width={200} height={50} />
+          {/* <img src="logo-left.png" className="w-[180px]" /> */}
         </Link>
 
         <div className="flex items-center gap-4">

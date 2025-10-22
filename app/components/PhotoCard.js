@@ -42,7 +42,7 @@ export default function PhotoCard() {
           <span className="h-[1px] border-t-2 w-[34px] border-dotted border-[#0f0f0f] mt-[-10px] ml-[15px]"></span>
         </div>
 
-        <p className="text-gray-700 text-lg border-l-4 border-l-[#FEB83F] pl-0.5">
+        <p className="text-gray-700 text-lg border-l-4 border-l-[#FEB83F] pl-1.5">
           W naszym sklepie dajemy drugie życie Twoim ubraniom! 🌿 Przerabiamy
           stare, nieużywane ciuchy w stylowe torby, które łączą modę z ekologią.
           Każda torba ma swoją historię i charakter, a Ty możesz mieć wyjątkowy

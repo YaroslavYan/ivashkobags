@@ -19,15 +19,15 @@ export default function MainPageCategory() {
         {/* Центр */}
         <div className="flex flex-1 items-center justify-center">
           <ul className="md:max-w-[400px] space-y-4 text-[#171717] ">
-            <li className="border-l-4 border-l-[#FEB83F] pl-0.5">
+            <li className="border-l-4 border-l-[#FEB83F] pl-1.5">
               <strong>Torby typu tote</strong> — Twój niezawodny towarzysz w
               dużym mieście. Przestronne i stylowe.
             </li>
-            <li className="border-l-4 border-l-[#FEB83F] pl-0.5">
+            <li className="border-l-4 border-l-[#FEB83F] pl-1.5">
               <strong>Shopper / Torba</strong> — na spacery, zakupy i przygody.
               Lekkie, z charakterem.
             </li>
-            <li className="border-l-4 border-l-[#FEB83F] pl-0.5">
+            <li className="border-l-4 border-l-[#FEB83F] pl-1.5">
               <strong>Mini torebki / Hinkalne kub</strong> — małe, ale z wielkim
               temperamentem. Dodają pikanterii Twojemu lookowi.
             </li>

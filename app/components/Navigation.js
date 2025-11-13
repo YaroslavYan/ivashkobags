@@ -110,13 +110,13 @@ export default function Navigation({ productsCartCount }) {
               style={{ borderColor: "rgba(255,255,255,0.2)" }}
             >
               <Link
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61582651386669&rdid=tgFOsNZgQyRVZc4s&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1GnMy5cW8B%2F#"
                 className="hover:text-accent-400 hover:text-gray-300 transition"
               >
                 <FaFacebook size={20} />
               </Link>
               <Link
-                href="https://www.instagram.com/ivashko_bags/"
+                href="https://www.instagram.com/ivashko.store/"
                 className="hover:text-accent-400 hover:text-gray-300 transition"
               >
                 <FaInstagram size={20} />

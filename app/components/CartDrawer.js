@@ -46,7 +46,9 @@ export default function CartDrawer({ products, sessionId }) {
         </div>
 
         {!products || products.length === 0 ? (
-          <p>Кошик порожній.</p>
+          <div className="h-[100vh] flex justify-center items-center">
+            <p>Кошик порожній</p>
+          </div>
         ) : (
           <ul className="space-y-4">
             {products.map((item, index) => (

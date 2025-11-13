@@ -25,35 +25,39 @@ function Footer() {
         <div className="flex flex-col gap-3 ml-auto">
           {/* Іконки соцмереж */}
           <div className="flex gap-4 ml-auto">
-            <a href="https://facebook.com" target="_blank" rel="noreferrer">
+            <Link
+              href="https://www.facebook.com/profile.php?id=61582651386669&rdid=tgFOsNZgQyRVZc4s&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1GnMy5cW8B%2F#"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaFacebook className="w-6 h-6 hover:text-gray-400 transition" />
-            </a>
-            <a
-              href="https://www.instagram.com/ivashko_bags/"
+            </Link>
+            <Link
+              href="https://www.instagram.com/ivashko.store/"
               target="_blank"
               rel="noreferrer"
             >
               <FaInstagram className="w-6 h-6 hover:text-gray-400 transition" />
-            </a>
-            <a href="https://t.me" target="_blank" rel="noreferrer">
+            </Link>
+            <Link href="https://t.me" target="_blank" rel="noreferrer">
               <FaTelegram className="w-6 h-6 hover:text-gray-400 transition" />
-            </a>
+            </Link>
           </div>
 
           {/* Телефон */}
-          <a
+          <Link
             href="tel:+48513285071"
             className="text-sm ml-auto hover:text-gray-400 transition"
           >
             +48 513 285 071
-          </a>
+          </Link>
 
-          <a
+          <Link
             href="mailto:ivashkobags@gmail.com"
             className="text-sm hover:text-gray-400 transition"
           >
             ivashkobags@gmail.com
-          </a>
+          </Link>
         </div>
       </div>
 

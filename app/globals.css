@@ -86,3 +86,11 @@ a {
   opacity: 1;
   transform: translateX(0);
 }
+/* Ховає горизонтальний скролбар */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

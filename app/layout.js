@@ -1,73 +1,29 @@
-import { cookies } from "next/headers";
-import CartDrawerServer from "./components/CartDrawerServer";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import ScrollToTop from "./components/ScrollToTop";
-import { CartProvider } from "./context/CartContext";
 import "./globals.css";
-import { getCartCount } from "./_lib/data-service";
-
 import { Poppins, Montserrat } from "next/font/google";
+import { getLocale } from "next-intl/server";
 
-// Основний текст
 const poppins = Poppins({
   subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "600"],
   variable: "--font-poppins",
 });
 
-// Заголовки
 const montserrat = Montserrat({
   subsets: ["latin", "latin-ext"],
   weight: ["600", "700"],
   variable: "--font-montserrat",
 });
 
-export const metadata = {
-  title: {
-    default: "Магазин сумок | Ivashko",
-    template: "%s | Ivashko", // підставить назву сторінки
-  },
-  description:
-    "Інтернет-магазин стильних жіночих і чоловічих сумок з доставкою по Польщі.",
-  metadataBase: new URL("https://example.com"),
-  openGraph: {
-    title: "Магазин сумок Ivashko",
-    description: "Купуйте стильні сумки онлайн з доставкою.",
-    url: "https://example.com",
-    siteName: "Ivashko",
-    locale: "uk_UA",
-    type: "website",
-  },
-};
-
 export default async function RootLayout({ children }) {
-  const cookieStore = await cookies();
-  const sessionId = cookieStore.get("sessionId")?.value;
-
-  const productsCartCount = await getCartCount({ sessionId });
+  const locale = await getLocale();
 
   return (
-    <html lang="en" className={`${poppins.variable} ${montserrat.variable}`}>
-      <body className="bg-[#f8f5f0] antialiased bg-primary-950 text-primary-100 min-h-screen flex flex-col">
-        <CartProvider>
-          {/* Скролити в верх при відкритті нової сторінки */}
-          <ScrollToTop />
-          <Hero productsCartCount={productsCartCount} />
-
-          <div className="flex-1 px-0 md:px-8 py-12 grid">
-            <main
-              className="max-w-7xl mx-auto w-full"
-              style={{ maxWidth: "1600px" }}
-            >
-              {children}
-            </main>
-          </div>
-
-          <CartDrawerServer />
-        </CartProvider>
-
-        <Footer />
+    <html
+      lang={locale}
+      className={`${poppins.variable} ${montserrat.variable}`}
+    >
+      <body className="bg-[#f8f5f0] antialiased text-primary-100 min-h-screen flex flex-col">
+        {children}
       </body>
     </html>
   );

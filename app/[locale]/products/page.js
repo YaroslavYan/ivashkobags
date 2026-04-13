@@ -1,0 +1,93 @@
+import ProductCard from "../../components/ProductCard";
+import SidebarMenu from "../../components/SidebarMenu";
+import MobileCategoryBar from "../../components/MobileCategoryBar";
+import { getCartItems, getProducts } from "../../_lib/data-service";
+import RevealOnScroll from "../../components/RevealOnScroll";
+import PaginationClient from "./PaginationClient";
+import { cookies } from "next/headers";
+import { getTranslations } from "next-intl/server";
+
+export const metadata = {
+  title: "Katalog",
+};
+
+export default async function Page(props) {
+  const t = await getTranslations("Products");
+  const searchParams = await props.searchParams;
+
+  const cookieStore = await cookies();
+  const sessionId = cookieStore.get("sessionId")?.value;
+
+  const productsCart = await getCartItems({ sessionId });
+
+  let page = 1;
+  if (searchParams?.page) {
+    const p = searchParams.page;
+    page = Array.isArray(p) ? Number(p[0]) || 1 : Number(p) || 1;
+  }
+
+  let categorySlug = "";
+  if (searchParams?.category) {
+    const c = searchParams.category;
+    categorySlug = Array.isArray(c) ? c[0] : c;
+  }
+
+  const limit = 3;
+  const { products = [], total = 0 } = await getProducts({
+    page,
+    limit,
+    categorySlug,
+  });
+
+  const totalPages = Math.max(1, Math.ceil(total / limit));
+
+  return (
+    <div className="flex gap-8 px-8 py-12 w-full max-w-[1600px] mx-auto">
+      <aside className="w-72 shrink-0 hidden md:block">
+        <SidebarMenu />
+      </aside>
+
+      <section className="flex-1">
+        {/* Mobile category bar — visible only on small screens */}
+        <MobileCategoryBar />
+
+        <div key={page} className="grid grid-cols-2 lg:grid-cols-3 gap-6">
+          {products.length === 0 ? (
+            <div className="col-span-full text-center py-12 text-gray-500">
+              {t("noProducts")}
+            </div>
+          ) : (
+            products.map((product) => {
+              const inCart = productsCart.some(
+                (item) => item.products.id === product.id
+              );
+
+              return (
+                <ProductCard
+                  key={product.id}
+                  id={product.id}
+                  image={
+                    product.image ||
+                    (product.productImages && product.productImages[0]?.path) ||
+                    "/placeholder.jpg"
+                  }
+                  title={product.title}
+                  price={product.price}
+                  inCart={inCart} //  сюди передаємо результат перевірки
+                />
+              );
+            })
+          )}
+        </div>
+
+        <PaginationClient
+          page={page}
+          totalPages={totalPages}
+          categorySlug={categorySlug}
+        />
+      </section>
+
+      <RevealOnScroll immediate page={page} categorySlug={categorySlug} />
+    </div>
+  );
+}

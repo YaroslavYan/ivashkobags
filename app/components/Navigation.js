@@ -1,47 +1,46 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname } from "@/i18n/routing";
+import { Link } from "@/i18n/routing";
 import {
   FaFacebook,
   FaInstagram,
   FaShoppingCart,
   FaTelegram,
-  // FaUser,
 } from "react-icons/fa";
-// import { FaShoppingBag } from "react-icons/fa";
 import { useCart } from "../context/CartContext";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
+import LanguageSwitcher from "./LanguageSwitcher";
 
-import logo from "../../public/logo-left.png"; // шлях до картинки у папці public або імпорт через module
+import logo from "../../public/logo-left.png";
 
 export default function Navigation({ productsCartCount }) {
   const [isScrolled, setIsScrolled] = useState(false);
+  const t = useTranslations("Nav");
 
   const navItems = [
-    { href: "/", label: "Strona główna" },
-    { href: "/products", label: "Katalog" },
-    { href: "/blog", label: "Nasz blog" },
-    { href: "/about", label: "O nas" },
+    { href: "/", label: t("home") },
+    { href: "/products", label: t("catalog") },
+    { href: "/blog", label: t("blog") },
+    { href: "/about", label: t("about") },
   ];
 
   const { openCart } = useCart();
-
   const pathname = usePathname();
 
-  // Відстеження скролу
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <nav className="w-full h-full z-10 text-[#fff] m-0 p-0 hidden md:block">
+      {/* Sticky top bar on scroll */}
       <div
         className={`fixed top-0 left-0 w-full z-50 flex justify-between items-center h-[80px] px-4 bg-black transform-gpu transition-all duration-500 ease-in-out ${
           isScrolled
@@ -52,22 +51,14 @@ export default function Navigation({ productsCartCount }) {
       >
         <Link
           href="/"
-          className="flex items-center gap-2 tracking-widest text-2xl ml-[9px] "
+          className="flex items-center gap-2 tracking-widest text-2xl ml-[9px]"
         >
-          {/* IVASHKO */}
-          <Image
-            src={logo}
-            alt="Logo"
-            width={200} // ширина
-            height={50} // висота
-            className="w-[200px]"
-          />
-          {/* <FaShoppingBag size={24} /> */}
+          <Image src={logo} alt="Logo" width={200} height={50} className="w-[200px]" />
         </Link>
-        <div className="flex items-center gap-4 mr-[72px] ">
+        <div className="flex items-center gap-6 mr-[72px]">
+          <LanguageSwitcher />
           <button onClick={openCart} className="relative cursor-pointer">
             <FaShoppingCart className="hover:text-accent-400" size={24} />
-
             {productsCartCount > 0 && (
               <span
                 className="absolute -top-2 -right-4 bg-red-300 text-white text-xs w-5 h-5 flex items-center justify-center rounded-sm font-semibold"
@@ -80,12 +71,12 @@ export default function Navigation({ productsCartCount }) {
         </div>
       </div>
 
-      {/* Обгортка для горизонтального вирівнювання */}
+      {/* Main layout */}
       <div
-        className="flex border  items-start h-full"
+        className="flex border items-start h-full"
         style={{ borderColor: "rgba(255,255,255,0.2)" }}
       >
-        {/* Лого зліва */}
+        {/* Logo left */}
         <div
           className="flex-1 flex items-center px-6 h-[100px] border-b"
           style={{ borderColor: "rgba(255,255,255,0.2)" }}
@@ -94,49 +85,43 @@ export default function Navigation({ productsCartCount }) {
             href="/"
             className="flex items-center gap-2 tracking-widest text-2xl font-serif font-semibold"
           >
-            {/* IVASHKO */}
-            <img src="logo-left.png" className="w-[230px]" />
-            {/* <FaShoppingBag size={24} /> */}
+            <img src="/logo-left.png" className="w-[230px]" alt="Ivashko" />
           </Link>
         </div>
 
-        {/* Правий блок */}
+        {/* Right block */}
         <div className="flex flex-col items-end h-full">
-          {/* Верхній рядок: соцмережі + кошик/юзер */}
+          {/* Top row: social + cart */}
           <div className="flex">
-            {/* Соцмережі */}
+            {/* Social icons */}
             <div
               className="flex items-center justify-center gap-4 w-[200px] h-[100px] border-b border-l"
               style={{ borderColor: "rgba(255,255,255,0.2)" }}
             >
               <Link
-                href="https://www.facebook.com/profile.php?id=61582651386669&rdid=tgFOsNZgQyRVZc4s&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1GnMy5cW8B%2F#"
-                className="hover:text-accent-400 hover:text-gray-300 transition"
+                href="https://www.facebook.com/profile.php?id=61582651386669"
+                className="hover:text-gray-300 transition"
               >
                 <FaFacebook size={20} />
               </Link>
               <Link
                 href="https://www.instagram.com/ivashko.store/"
-                className="hover:text-accent-400 hover:text-gray-300 transition"
+                className="hover:text-gray-300 transition"
               >
                 <FaInstagram size={20} />
               </Link>
-              <Link
-                href="#"
-                className="hover:text-accent-400 hover:text-gray-300 transition"
-              >
+              <Link href="#" className="hover:text-gray-300 transition">
                 <FaTelegram size={20} />
               </Link>
             </div>
 
-            {/* Кошик + користувач */}
+            {/* Cart */}
             <div
               className="flex items-center justify-center gap-6 w-[200px] h-[100px] border-b border-l hover:text-gray-300 transition"
               style={{ borderColor: "rgba(255,255,255,0.2)" }}
             >
               <button onClick={openCart} className="relative cursor-pointer">
                 <FaShoppingCart className="hover:text-accent-400" size={24} />
-
                 {productsCartCount > 0 && (
                   <span
                     className="absolute -top-2 -right-4 bg-red-300 text-white text-xs w-5 h-5 flex items-center justify-center rounded-sm font-semibold"
@@ -146,13 +131,10 @@ export default function Navigation({ productsCartCount }) {
                   </span>
                 )}
               </button>
-              {/* <Link href="/login" className="hover:text-accent-400">
-                <FaUser size={24} />
-              </Link> */}
             </div>
           </div>
 
-          {/* Вертикальне меню під "кошиком + користувачем" */}
+          {/* Vertical nav items */}
           <ul
             className="relative flex flex-col items-center justify-center gap-6 w-[200px] min-h-[300px] border-l border-b text-xl px-4"
             style={{ borderColor: "rgba(255,255,255,0.2)" }}
@@ -163,14 +145,11 @@ export default function Navigation({ productsCartCount }) {
                 style={{
                   top: (() => {
                     switch (pathname) {
-                      case "/":
-                        return "2.5rem";
-                      case "/products":
-                        return "7.1rem";
-                      case "/blog":
-                        return "11.5rem";
-                      case "/about":
-                        return "16rem";
+                      case "/": return "2.5rem";
+                      case "/products": return "7.1rem";
+                      case "/blog": return "11.5rem";
+                      case "/about": return "16rem";
+                      default: return "2.5rem";
                     }
                   })(),
                 }}
@@ -178,16 +157,12 @@ export default function Navigation({ productsCartCount }) {
             )}
 
             {navItems.map(({ href, label }) => (
-              <li
-                key={href}
-                className="w-full flex items-center justify-center h-[3rem]"
-              >
+              <li key={href} className="w-full flex items-center justify-center h-[3rem]">
                 <Link
                   href={href}
-                  className={`transition-transform duration-500 ease-in-out hover:text-gray-300`}
+                  className="transition-transform duration-500 ease-in-out hover:text-gray-300"
                   style={{
-                    transform:
-                      pathname === href ? "translateX(10px)" : "translateX(0)",
+                    transform: pathname === href ? "translateX(10px)" : "translateX(0)",
                   }}
                 >
                   {label}
@@ -196,10 +171,19 @@ export default function Navigation({ productsCartCount }) {
             ))}
           </ul>
 
+          {/* Language switcher section */}
           <div
-            className="flex flex-col items-center justify-center gap-6 w-[200px] h-[100vh] border-l text-xl px-4"
+            className="flex items-center justify-center w-[200px] h-[80px] border-l border-b"
             style={{ borderColor: "rgba(255,255,255,0.2)" }}
-          ></div>
+          >
+            <LanguageSwitcher />
+          </div>
+
+          {/* Remaining space */}
+          <div
+            className="flex flex-col items-center justify-center gap-6 w-[200px] flex-1 border-l text-xl px-4"
+            style={{ borderColor: "rgba(255,255,255,0.2)" }}
+          />
         </div>
       </div>
     </nav>

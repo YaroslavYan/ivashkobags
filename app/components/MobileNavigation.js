@@ -1,26 +1,30 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaShoppingCart, FaBars, FaTimes } from "react-icons/fa";
 import { useCart } from "../context/CartContext";
-import { usePathname } from "next/navigation";
+import { usePathname, Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import logo from "../../public/logo-left.png";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function MobileNavigation({ productsCartCount }) {
+  const t = useTranslations("Nav");
+
   const navItems = [
-    { href: "/", label: "Strona główna" },
-    { href: "/products", label: "Katalog" },
-    { href: "/blog", label: "Nasz blog" },
-    { href: "/about", label: "O nas" },
+    { href: "/", label: t("home") },
+    { href: "/products", label: t("catalog") },
+    { href: "/blog", label: t("blog") },
+    { href: "/about", label: t("about") },
   ];
+
   const { openCart } = useCart();
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Блокування скролу коли меню відкрите
+  // Block scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
     return () => {
@@ -28,36 +32,31 @@ export default function MobileNavigation({ productsCartCount }) {
     };
   }, [isMenuOpen]);
 
-  // Відстеження скролу
+  // Track scroll
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 30);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <div className="md:hidden">
-      {/* Фіксована шапка завжди */}
+      {/* Fixed header */}
       <div
         className={`
-      fixed top-0 left-0 w-full z-50 flex justify-between items-center h-[80px] px-4
-    bg-black transition-all duration-300 
-      ${isScrolled ? "bg-black/100" : "bg-black/60"}
-      `}
+          fixed top-0 left-0 w-full z-50 flex justify-between items-center h-[80px] px-4
+          bg-black transition-all duration-300
+          ${isScrolled ? "bg-black/100" : "bg-black/60"}
+        `}
       >
-        <Link
-          href="/"
-          className="flex items-center gap-2 text-2xl font-semibold font-serif text-white"
-        >
+        <Link href="/" className="flex items-center gap-2 text-2xl font-semibold font-serif text-white">
           <Image src={logo} alt="IVASHKO Logo" width={200} height={50} />
-          {/* <img src="logo-left.png" className="w-[180px]" /> */}
         </Link>
 
         <div className="flex items-center gap-4">
-          <button onClick={openCart} className="cursor-pointer text-white ">
+          <button onClick={openCart} className="cursor-pointer text-white relative">
             <FaShoppingCart size={24} />
             {productsCartCount > 0 && (
               <span
@@ -78,7 +77,7 @@ export default function MobileNavigation({ productsCartCount }) {
         </div>
       </div>
 
-      {/* Анімоване повноекранне мобільне меню */}
+      {/* Fullscreen mobile menu */}
       <div
         className={`
           fixed top-0 left-0 w-full h-screen bg-black flex flex-col items-center justify-center gap-8 text-xl z-40
@@ -92,8 +91,8 @@ export default function MobileNavigation({ productsCartCount }) {
               <Link
                 href={href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`text-white hover:text-gray-300 ${
-                  pathname === href ? "text-accent-400" : ""
+                className={`text-white hover:text-gray-300 transition-colors ${
+                  pathname === href ? "text-[#FEB83F]" : ""
                 }`}
               >
                 {label}
@@ -101,12 +100,11 @@ export default function MobileNavigation({ productsCartCount }) {
             </li>
           ))}
         </ul>
-        {/* <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          style={{ color: "white" }}
-        >
-          {isMenuOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
-        </button> */}
+
+        {/* Language switcher in mobile menu */}
+        <div className="mt-2 border-t border-white/20 pt-6 w-40 flex justify-center">
+          <LanguageSwitcher />
+        </div>
       </div>
     </div>
   );

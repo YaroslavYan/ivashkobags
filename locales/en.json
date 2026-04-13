@@ -94,6 +94,7 @@
   },
   "Categories": {
     "all": "All",
+    "allMain": "Catalog",
     "shopper": "Shopper",
     "tote": "Tote bags",
     "mini": "Mini bags"
@@ -131,5 +132,32 @@
     "notFound": "Order not found",
     "invalidId": "Invalid order number."
   },
-  "Header": { "logo": "Ivashko" }
+  "Header": { "logo": "Ivashko" },
+  "NewArrivals": { "title": "Featured" },
+  "ProductPage": {
+    "specs": "Specifications",
+    "description": "Product description",
+    "height": "Height",
+    "width": "Width",
+    "depth": "Depth",
+    "material": "Material",
+    "currency": "$"
+  },
+  "PhotoCard": {
+    "title": "About us",
+    "heading": "Bags made with soul",
+    "text": "In our store we give your clothes a second life! We transform old, unused garments into stylish bags that combine fashion with ecology. Each bag has its own story and character, and you can have a unique accessory made with passion. Your style, our creativity — together we create something one of a kind!",
+    "factEco": "Eco materials",
+    "factHandmade": "Handmade",
+    "readMore": "Read more"
+  },
+  "MainCategory": {
+    "title": "Shop by category",
+    "toteTitle": "Tote bags",
+    "toteDesc": "Your reliable companion in the big city. Spacious and stylish.",
+    "shopperTitle": "Shopper / Bag",
+    "shopperDesc": "For walks, shopping and adventures. Light, with character.",
+    "miniTitle": "Mini bags",
+    "miniDesc": "Small, but with big personality. They add a spark to your look."
+  }
 }

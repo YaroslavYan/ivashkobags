@@ -2,8 +2,10 @@ import NewProductCard from "./NewProductCard";
 import { getCartItems, getProducts } from "../_lib/data-service";
 import RevealOnScroll from "./RevealOnScroll";
 import { cookies } from "next/headers";
+import { getTranslations } from "next-intl/server";
 
 export default async function NewArrivals() {
+  const t = await getTranslations("NewArrivals");
   const { products } = await getProducts({ isNewOnly: true });
 
   const cookieStore = await cookies(); // це вже можна викликати синхронно в серверній компоненті
@@ -16,7 +18,7 @@ export default async function NewArrivals() {
       <div className="flex items-center gap-3 pb-8 ml-[15px] sm:ml-0">
         <span className=" h-[2px] border-t-2 w-[34px] border-dotted border-[#0f0f0f] mt-[-19px]"></span>
         <h2 className="text-2xl font-bold mb-4 text-center text-[#171717]">
-          Polecane
+          {t("title")}
         </h2>
       </div>
       <div

@@ -94,6 +94,7 @@
   },
   "Categories": {
     "all": "Wszystkie",
+    "allMain": "Katalog",
     "shopper": "Shopper",
     "tote": "Torby tote",
     "mini": "Mini torebki"
@@ -131,5 +132,32 @@
     "notFound": "Zamówienie nie zostało znalezione",
     "invalidId": "Nieprawidłowy numer zamówienia."
   },
-  "Header": { "logo": "Ivashko" }
+  "Header": { "logo": "Ivashko" },
+  "NewArrivals": { "title": "Polecane" },
+  "ProductPage": {
+    "specs": "Charakterystyka",
+    "description": "Opis produktu",
+    "height": "Wysokość",
+    "width": "Szerokość",
+    "depth": "Głębokość",
+    "material": "Materiał",
+    "currency": "zł"
+  },
+  "PhotoCard": {
+    "title": "O nas",
+    "heading": "Tworzymy torebki z duszą",
+    "text": "W naszym sklepie dajemy drugie życie Twoim ubraniom! Przerabiamy stare, nieużywane ciuchy w stylowe torby, które łączą modę z ekologią. Każda torba ma swoją historię i charakter, a Ty możesz mieć wyjątkowy dodatek stworzony z pasją. Twój styl, nasza kreatywność — razem tworzymy coś niepowtarzalnego!",
+    "factEco": "Eco materiały",
+    "factHandmade": "Ręcznie robione",
+    "readMore": "Czytaj dalej"
+  },
+  "MainCategory": {
+    "title": "Wybieraj według kategorii",
+    "toteTitle": "Torby typu tote",
+    "toteDesc": "Twój niezawodny towarzysz w dużym mieście. Przestronne i stylowe.",
+    "shopperTitle": "Shopper / Torba",
+    "shopperDesc": "Na spacery, zakupy i przygody. Lekkie, z charakterem.",
+    "miniTitle": "Mini torebki",
+    "miniDesc": "Małe, ale z wielkim temperamentem. Dodają pikanterii Twojemu lookowi."
+  }
 }

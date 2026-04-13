@@ -9,7 +9,7 @@ export default function SidebarMenu({ variant = "products" }) {
   const tp = useTranslations("Products");
 
   const categories = [
-    { name: t("all"), slug: "all", image: "/w1.jpg" },
+    { name: variant === "main" ? t("allMain") : t("all"), slug: "all", image: "/w1.jpg" },
     { name: t("shopper"), slug: "shopper", image: "/w4.jpg" },
     { name: t("tote"), slug: "tote", image: "/w5.jpg" },
     { name: t("mini"), slug: "mini", image: "/w2.jpg" },

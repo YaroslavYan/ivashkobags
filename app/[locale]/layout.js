@@ -2,6 +2,7 @@ import { cookies } from "next/headers";
 import CartDrawerServer from "../components/CartDrawerServer";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
+import HomeBackground from "../components/HomeBackground";
 import ScrollToTop from "../components/ScrollToTop";
 import { CartProvider } from "../context/CartContext";
 import { getCartCount } from "../_lib/data-service";
@@ -66,19 +67,23 @@ export default async function LocaleLayout({ children, params }) {
         <ScrollToTop />
         <Hero productsCartCount={productsCartCount} />
 
-        <div className="flex-1 px-0 md:px-8 py-12 grid">
-          <main
-            className="max-w-7xl mx-auto w-full"
-            style={{ maxWidth: "1600px" }}
-          >
-            {children}
-          </main>
+        <div style={{ position: "relative" }}>
+          <HomeBackground />
+
+          <div className="flex-1 px-0 md:px-8 py-12 grid" style={{ position: "relative", zIndex: 1 }}>
+            <main
+              className="max-w-7xl mx-auto w-full"
+              style={{ maxWidth: "1600px" }}
+            >
+              {children}
+            </main>
+          </div>
+
+          <Footer />
         </div>
 
         <CartDrawerServer />
       </CartProvider>
-
-      <Footer />
     </NextIntlClientProvider>
   );
 }

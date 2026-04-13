@@ -1,0 +1,135 @@
+{
+  "Nav": {
+    "home": "Home",
+    "catalog": "Catalog",
+    "blog": "Our blog",
+    "about": "About us"
+  },
+  "Hero": {
+    "tagline": "Bags with a story. Your style with a fresh breath.",
+    "subtitle": "Second life of clothes — first love for bags."
+  },
+  "About": {
+    "pageTitle": "About us",
+    "subtitle": "We create bags that have their own story. Each piece is a combination of care, aesthetics and respect for materials that have already lived.",
+    "workshopTitle": "We are the IVASHKO workshop",
+    "workshopText": "We believe in the beauty of simple things and the power of a second chance. Our products are not just accessories, but stylish and practical items created with care for people and the planet. Each bag has its own story — and becomes part of yours.",
+    "materialsTitle": "Materials we give a second life",
+    "materialsText": "We sew from what someone once chose: old jeans, jackets, fabrics from second-hand shops. We carefully select materials to give them a new life — in the form of unique bags with character. This is the aesthetics of conscious consumption, where every item matters.",
+    "quote": "We don't just sew bags. We create things that remind us — a second chance can be beautiful."
+  },
+  "Blog": {
+    "pageTitle": "Our Blog",
+    "readMore": "Read more →",
+    "post1Title": "How our unique bags are born ♻️",
+    "post1Date": "October 10, 2025",
+    "post1Excerpt": "We tell how old clothes get a second life — from fabric selection to creating stylish handmade bags.",
+    "post1Content": "We tell how old clothes get a second life — from fabric selection to creating stylish handmade bags.<br /><br />It all starts with finding high-quality materials that have already been used. Then we carefully select colors, textures and details to create something truly special.<br /><br />Each bag has its own story, and we are happy to share it with you 💛",
+    "post2Title": "5 reasons to choose a bag made from recycled clothing 🌿",
+    "post2Date": "October 2, 2025",
+    "post2Excerpt": "Eco-friendliness, uniqueness, style and care for the planet — that's why we love upcycling.",
+    "post2Content": "Eco-friendliness, uniqueness, style and care for the planet — that's why we love upcycling.<br /><br />Each product is handmade, without harmful waste and excess production. You get not just a thing — but a piece of conscious fashion 🌱",
+    "post3Title": "How we create the design of each model 🎨",
+    "post3Date": "September 25, 2025",
+    "post3Excerpt": "Take a look behind the scenes of our workshop — how ideas are born, materials are selected and colors are combined.",
+    "post3Content": "It all starts with an idea. We create sketches, experiment with shapes and colors.<br /><br />Then we select materials that already have a history and breathe new life into them. Each model is the result of inspiration, work and love for details 💫"
+  },
+  "Delivery": {
+    "pageTitle": "Payment & Delivery",
+    "deliveryTitle": "🚚 Delivery",
+    "deliveryItem1Label": "Post across Poland",
+    "deliveryItem1Text": "delivery at postal service rates.",
+    "deliveryItem2Label": "Free in Wrocław",
+    "deliveryItem2Text": "we will arrange a convenient time and place of delivery.",
+    "paymentTitle": "💳 Payment",
+    "paymentItem1Label": "Card via PayU",
+    "paymentItem1Text": "fast and secure.",
+    "paymentItem2Label": "Cash on delivery",
+    "paymentItem2Text": "convenient for postal orders.",
+    "paymentItem3Label": "Bank transfer",
+    "paymentItem3Text": "after placing your order we will send bank details."
+  },
+  "Privacy": {
+    "pageTitle": "Privacy Policy",
+    "intro": "This Privacy Policy describes how we collect, use and protect your personal data when using our online bag store in Poland.",
+    "s1Title": "1. Data administrator",
+    "s1Text": "The administrator of your personal data is [Company Name] based in [Address in Poland]. You can contact us at the e-mail address: [email].",
+    "s2Title": "2. What data we collect",
+    "s2Items": ["Name and surname", "Delivery address", "Phone number and e-mail address", "Payment data (not stored on our site, processed by the PayU payment system)"],
+    "s3Title": "3. Purpose of data processing",
+    "s3Items": ["Processing orders and delivering goods", "Issuing invoices and accounting for payments", "Sending information about order status", "Fulfilling legal obligations (RODO / GDPR)"],
+    "s4Title": "4. Data retention period",
+    "s4Text": "We store your personal data only for as long as necessary to fulfill the purposes for which it was collected, or in accordance with the requirements of Polish and EU law.",
+    "s5Title": "5. User rights",
+    "s5Intro": "You have the right to:",
+    "s5Items": ["Access your data", "Correct or delete your data", "Restrict processing or object to it", "File a complaint with the data protection authority (UODO in Poland)"],
+    "s6Title": "6. Cookies",
+    "s6Text": "Our website uses cookies to improve performance and analyze traffic. You can disable cookies in your browser settings.",
+    "s7Title": "7. Transfer of data to third parties",
+    "s7Intro": "We do not share your data with third-party companies, except:",
+    "s7Items": ["Postal and courier services (for delivery)", "PayU payment system (for payment)"],
+    "updated": "Last updated: [date]"
+  },
+  "Login": {
+    "loginTitle": "Sign in",
+    "registerTitle": "Create account",
+    "email": "Email address",
+    "password": "Password",
+    "loginBtn": "Sign in",
+    "registerBtn": "Create account",
+    "hasAccount": "Already have an account?",
+    "noAccount": "Don't have an account yet?"
+  },
+  "NotFound": {
+    "title": "Page not found :(",
+    "back": "Back to home"
+  },
+  "Footer": {
+    "delivery": "Payment & Delivery",
+    "privacy": "Privacy Policy"
+  },
+  "Products": {
+    "noProducts": "No products found for this page.",
+    "categoriesTitle": "Categories"
+  },
+  "Categories": {
+    "all": "All",
+    "shopper": "Shopper",
+    "tote": "Tote bags",
+    "mini": "Mini bags"
+  },
+  "Checkout": {
+    "title": "Place order",
+    "nameLabel": "Full name",
+    "namePlaceholder": "Full name",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "+48...",
+    "addressLabel": "Delivery address",
+    "addressPlaceholder": "City, street, number",
+    "commentLabel": "Order comment",
+    "commentPlaceholder": "Additional information...",
+    "submitBtn": "Confirm order",
+    "emptyCart": "Your cart is empty 🛒",
+    "emptyCartSub": "Add a product to place an order",
+    "orderSummary": "Your order",
+    "total": "Total:",
+    "cardLabel": "Credit card",
+    "cardDesc": "Pay by Visa/MasterCard through a secure payment system.",
+    "bankLabel": "Bank transfer",
+    "bankDesc": "Transfer to our account. Details will be sent after placing the order.",
+    "cashLabel": "Cash on delivery",
+    "cashDesc": "Pay cash to the courier or at the post office upon receiving the order."
+  },
+  "Orders": {
+    "thankYou": "Thank you for your order!",
+    "nameLabel": "Name:",
+    "phoneLabel": "Phone:",
+    "statusLabel": "Status:",
+    "itemsTitle": "Products",
+    "totalLabel": "Total:",
+    "goHome": "Back to home",
+    "notFound": "Order not found",
+    "invalidId": "Invalid order number."
+  },
+  "Header": { "logo": "Ivashko" }
+}

@@ -1,0 +1,135 @@
+{
+  "Nav": {
+    "home": "Strona główna",
+    "catalog": "Katalog",
+    "blog": "Nasz blog",
+    "about": "O nas"
+  },
+  "Hero": {
+    "tagline": "Torebki z historią. Twój styl z nowym oddechem.",
+    "subtitle": "Drugie życie ubrań — pierwsza miłość do torebek."
+  },
+  "About": {
+    "pageTitle": "O nas",
+    "subtitle": "Tworzymy torby, które mają swoją historię. Każdy wyrób to połączenie troski, estetyki i szacunku do materiałów, które już żyły.",
+    "workshopTitle": "Jesteśmy pracownią IVASHKO",
+    "workshopText": "Wierzymy w piękno prostych rzeczy i siłę drugiej szansy. Nasze wyroby to nie tylko akcesoria, ale stylowe i praktyczne przedmioty stworzone z troską o ludzi i planetę. Każda torba ma własną historię — i staje się częścią Twojej.",
+    "materialsTitle": "Materiały, którym dajemy drugie życie",
+    "materialsText": "Szyjemy z tego, co ktoś już kiedyś wybrał: stare dżinsy, kurtki, tkaniny z second-handu. Starannie dobieramy materiały, aby dać im nowe życie — w postaci unikalnych toreb z charakterem. To estetyka świadomej konsumpcji, gdzie każda rzecz ma znaczenie.",
+    "quote": "Nie tylko szyjemy torby. Tworzymy rzeczy, które przypominają — druga szansa może być piękna."
+  },
+  "Blog": {
+    "pageTitle": "Nasz Blog",
+    "readMore": "Czytaj dalej →",
+    "post1Title": "Jak powstają nasze unikalne torebki ♻️",
+    "post1Date": "10 października 2025",
+    "post1Excerpt": "Opowiadamy, jak stare ubrania dostają drugie życie — od doboru tkanin do tworzenia stylowych torebek handmade.",
+    "post1Content": "Opowiadamy, jak stare ubrania dostają drugie życie — od doboru tkanin do tworzenia stylowych torebek handmade.<br /><br />Wszystko zaczyna się od poszukiwania wysokiej jakości materiałów, które były już w użyciu. Następnie starannie dobieramy kolory, faktury i detale, aby stworzyć coś naprawdę wyjątkowego.<br /><br />Każda torba ma swoją historię i chętnie się nią z Wami dzielimy 💛",
+    "post2Title": "5 powodów, by wybrać torbę z przerobionego ubrania 🌿",
+    "post2Date": "2 października 2025",
+    "post2Excerpt": "Ekologiczność, unikalność, styl i troska o planetę — oto dlaczego kochamy upcycling.",
+    "post2Content": "Ekologiczność, unikalność, styl i troska o planetę — oto dlaczego kochamy upcycling.<br /><br />Każdy wyrób jest tworzony ręcznie, bez szkodliwych odpadów i nadmiernej produkcji. Dostajesz nie tylko rzecz — ale część świadomej mody 🌱",
+    "post3Title": "Jak tworzymy design każdego modelu 🎨",
+    "post3Date": "25 września 2025",
+    "post3Excerpt": "Zajrzyj za kulisy naszej pracowni — jak rodzą się pomysły, dobierane są materiały i łączone kolory.",
+    "post3Content": "Wszystko zaczyna się od pomysłu. Tworzymy szkice, eksperymentujemy z formami i kolorami.<br /><br />Następnie wybieramy materiały, które mają już swoją historię, i tchnęmy w nie nowe życie. Każdy model to efekt inspiracji, pracy i miłości do detali 💫"
+  },
+  "Delivery": {
+    "pageTitle": "Płatność i dostawa",
+    "deliveryTitle": "🚚 Dostawa",
+    "deliveryItem1Label": "Poczta na terenie całej Polski",
+    "deliveryItem1Text": "dostawa wg taryf usług pocztowych.",
+    "deliveryItem2Label": "Bezpłatnie we Wrocławiu",
+    "deliveryItem2Text": "ustalimy wygodny czas i miejsce doręczenia.",
+    "paymentTitle": "💳 Płatność",
+    "paymentItem1Label": "Kartą przez PayU",
+    "paymentItem1Text": "szybko i bezpiecznie.",
+    "paymentItem2Label": "Gotówką przy odbiorze",
+    "paymentItem2Text": "wygodne dla zamówień pocztą.",
+    "paymentItem3Label": "Płatność przelewem",
+    "paymentItem3Text": "po złożeniu zamówienia wyślemy dane do przelewu."
+  },
+  "Privacy": {
+    "pageTitle": "Polityka prywatności",
+    "intro": "Niniejsza Polityka prywatności opisuje, w jaki sposób zbieramy, wykorzystujemy i chronimy Twoje dane osobowe podczas korzystania z naszego sklepu internetowego z torebkami w Polsce.",
+    "s1Title": "1. Administrator danych",
+    "s1Text": "Administratorem Twoich danych osobowych jest [Nazwa firmy] z siedzibą w [Adres w Polsce]. Możesz się z nami skontaktować pod adresem e-mail: [email].",
+    "s2Title": "2. Jakie dane zbieramy",
+    "s2Items": ["Imię i nazwisko", "Adres dostawy", "Numer telefonu i adres e-mail", "Dane płatnicze (nie przechowywane na naszej stronie, przetwarzane przez system PayU)"],
+    "s3Title": "3. Cel przetwarzania danych",
+    "s3Items": ["Realizacja zamówień i dostawa towarów", "Wystawianie faktur i rozliczenia płatności", "Wysyłanie informacji o statusie zamówienia", "Wypełnianie obowiązków prawnych (RODO / GDPR)"],
+    "s4Title": "4. Okres przechowywania danych",
+    "s4Text": "Przechowujemy Twoje dane osobowe tylko tak długo, jak jest to niezbędne do realizacji celów, dla których zostały zebrane, lub zgodnie z wymogami prawa polskiego i UE.",
+    "s5Title": "5. Prawa użytkownika",
+    "s5Intro": "Masz prawo do:",
+    "s5Items": ["Dostępu do swoich danych", "Poprawienia lub usunięcia danych", "Ograniczenia przetwarzania lub sprzeciwu wobec niego", "Złożenia skargi do organu ochrony danych (UODO w Polsce)"],
+    "s6Title": "6. Pliki cookie",
+    "s6Text": "Nasza strona używa plików cookie w celu poprawy działania i analizy ruchu. Możesz wyłączyć cookie w ustawieniach swojej przeglądarki.",
+    "s7Title": "7. Przekazywanie danych osobom trzecim",
+    "s7Intro": "Nie przekazujemy Twoich danych firmom zewnętrznym, z wyjątkiem:",
+    "s7Items": ["Usług pocztowych i kurierskich (w celu dostawy)", "Systemu płatności PayU (w celu realizacji płatności)"],
+    "updated": "Ostatnia aktualizacja: [data]"
+  },
+  "Login": {
+    "loginTitle": "Logowanie",
+    "registerTitle": "Rejestracja",
+    "email": "Adres e-mail",
+    "password": "Hasło",
+    "loginBtn": "Zaloguj się",
+    "registerBtn": "Zarejestruj się",
+    "hasAccount": "Masz już konto?",
+    "noAccount": "Nie masz jeszcze konta?"
+  },
+  "NotFound": {
+    "title": "Tej strony nie znaleziono :(",
+    "back": "Wróć na stronę główną"
+  },
+  "Footer": {
+    "delivery": "Płatność i dostawa",
+    "privacy": "Polityka prywatności"
+  },
+  "Products": {
+    "noProducts": "Nie znaleziono produktów dla tej strony.",
+    "categoriesTitle": "Kategorie"
+  },
+  "Categories": {
+    "all": "Wszystkie",
+    "shopper": "Shopper",
+    "tote": "Torby tote",
+    "mini": "Mini torebki"
+  },
+  "Checkout": {
+    "title": "Złóż zamówienie",
+    "namePlaceholder": "Imię i nazwisko",
+    "nameLabel": "Imię i nazwisko",
+    "phoneLabel": "Telefon",
+    "phonePlaceholder": "+48...",
+    "addressLabel": "Adres dostawy",
+    "addressPlaceholder": "Miasto, ulica, numer",
+    "commentLabel": "Komentarz do zamówienia",
+    "commentPlaceholder": "Dodatkowe informacje...",
+    "submitBtn": "Potwierdź zamówienie",
+    "emptyCart": "Twój koszyk jest pusty 🛒",
+    "emptyCartSub": "Dodaj produkt, aby złożyć zamówienie",
+    "orderSummary": "Twoje zamówienie",
+    "total": "Łączna kwota:",
+    "cardLabel": "Karta kredytowa",
+    "cardDesc": "Płatność kartą Visa/MasterCard przez bezpieczny system płatności.",
+    "bankLabel": "Przelew bankowy",
+    "bankDesc": "Przelew na nasze konto. Szczegóły zostaną przesłane po złożeniu zamówienia.",
+    "cashLabel": "Gotówka przy odbiorze",
+    "cashDesc": "Płatność gotówką kurierowi lub w oddziale poczty przy odbiorze zamówienia."
+  },
+  "Orders": {
+    "thankYou": "Dziękujemy za Twoje zamówienie!",
+    "nameLabel": "Imię:",
+    "phoneLabel": "Telefon:",
+    "statusLabel": "Status:",
+    "itemsTitle": "Produkty",
+    "totalLabel": "Łączna kwota:",
+    "goHome": "Na stronę główną",
+    "notFound": "Zamówienie nie zostało znalezione",
+    "invalidId": "Nieprawidłowy numer zamówienia."
+  },
+  "Header": { "logo": "Ivashko" }
+}

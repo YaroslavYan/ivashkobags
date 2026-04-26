@@ -133,7 +133,7 @@
     "invalidId": "Невірний номер замовлення."
   },
   "Header": { "logo": "Ivashko" },
-  "NewArrivals": { "title": "Рекомендовані" },
+  "NewArrivals": { "title": "Рекомендовані", "seeAll": "Переглянути всі" },
   "ProductPage": {
     "specs": "Характеристики",
     "description": "Опис товару",

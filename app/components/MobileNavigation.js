@@ -60,7 +60,7 @@ export default function MobileNavigation({ productsCartCount }) {
             <FaShoppingCart size={24} />
             {productsCartCount > 0 && (
               <span
-                className="absolute -top-[-18px] -right-[-45px] bg-red-300 text-white text-xs w-5 h-5 flex items-center justify-center rounded-sm font-semibold"
+                className="absolute -top-2 -right-2 bg-red-300 text-white text-xs w-5 h-5 flex items-center justify-center rounded-sm font-semibold"
                 aria-label={`${productsCartCount} items in cart`}
               >
                 {productsCartCount > 99 ? "99+" : productsCartCount}

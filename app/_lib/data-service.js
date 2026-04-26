@@ -32,7 +32,7 @@ export async function getProducts({
   }
 
   if (isNewOnly) {
-    query = query.eq("isNew", true).limit(4); // кількість новинок
+    query = query.eq("isNew", true).limit(6);
   }
 
   const { data, error, count } = await query;

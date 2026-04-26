@@ -14,16 +14,16 @@ export default function HeaderOverlay({ productsCartCount }) {
         <Navigation productsCartCount={productsCartCount} />
         <MobileNavigation productsCartCount={productsCartCount} />
 
-        <div className="absolute left-[50px] bottom-1/4">
+        <div className="absolute left-[50px] bottom-[8%] sm:bottom-[15%] md:bottom-1/4 max-w-[60vw] md:max-w-[calc(100%-280px)]">
           <h1
             data-reveal
-            className="text-white font-bold text-xl md:text-2xl lg:text-3xl [@media(max-width:360px)]:text-sm from-right"
+            className="text-white font-semibold tracking-tight leading-none text-3xl md:text-4xl lg:text-5xl mb-3 from-right"
           >
             {t("tagline")}
           </h1>
           <p
             data-reveal
-            className="text-[#FEB83F] text-sm md:text-base lg:text-lg [@media(max-width:360px)]:text-xs from-left"
+            className="text-[#FEB83F] text-[11px] font-semibold tracking-[0.15em] uppercase from-left"
           >
             {t("subtitle")}
           </p>

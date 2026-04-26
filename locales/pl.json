@@ -133,7 +133,7 @@
     "invalidId": "Nieprawidłowy numer zamówienia."
   },
   "Header": { "logo": "Ivashko" },
-  "NewArrivals": { "title": "Polecane" },
+  "NewArrivals": { "title": "Polecane", "seeAll": "Zobacz wszystkie" },
   "ProductPage": {
     "specs": "Charakterystyka",
     "description": "Opis produktu",

@@ -5,24 +5,26 @@ export default function ProductCard({ image, title, price, id, inCart }) {
   return (
     <article
       data-reveal
-      className="relative bg-white rounded overflow-hidden shadow-md from-left"
+      className="relative group from-left rounded-2xl overflow-hidden"
     >
       <Link href={`/product/${id}`}>
-        <div className="aspect-[4/5] w-full">
+        <div className="aspect-[3/4] w-full overflow-hidden">
           <img
             src={image}
             alt={title}
-            className="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-110"
+            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
           />
         </div>
       </Link>
 
-      <div className="absolute bottom-0 left-0 w-full bg-white/80 px-4 py-2 flex justify-between items-center">
-        <div>
-          <h3 className="font-semibold text-base text-[#171717]">{title}</h3>
-          <p className="text-gray-600 text-sm">{price} €</p>
+      <div className="absolute bottom-3 left-3 right-3">
+        <div className="bg-white/75 backdrop-blur-md border border-white/60 rounded-xl px-4 py-3 flex items-center gap-3">
+          <div className="flex-1 min-w-0">
+            <h3 className="font-semibold text-[13px] text-[#1d1d1f] truncate leading-snug">{title}</h3>
+            <p className="text-[12px] font-semibold text-[#1d1d1f] mt-1">{price} €</p>
+          </div>
+          <AddToCartButton id={id} inCart={inCart} />
         </div>
-        <AddToCartButton id={id} inCart={inCart} />
       </div>
     </article>
   );

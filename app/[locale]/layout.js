@@ -70,11 +70,8 @@ export default async function LocaleLayout({ children, params }) {
         <div style={{ position: "relative" }}>
           <HomeBackground />
 
-          <div className="flex-1 px-0 md:px-8 py-12 grid" style={{ position: "relative", zIndex: 1 }}>
-            <main
-              className="max-w-7xl mx-auto w-full"
-              style={{ maxWidth: "1600px" }}
-            >
+          <div style={{ position: "relative", zIndex: 1 }}>
+            <main className="w-full overflow-x-hidden">
               {children}
             </main>
           </div>

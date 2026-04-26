@@ -133,7 +133,7 @@
     "invalidId": "Invalid order number."
   },
   "Header": { "logo": "Ivashko" },
-  "NewArrivals": { "title": "Featured" },
+  "NewArrivals": { "title": "Featured", "seeAll": "See all" },
   "ProductPage": {
     "specs": "Specifications",
     "description": "Product description",

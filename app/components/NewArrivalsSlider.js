@@ -168,17 +168,6 @@ export default function NewArrivalsSlider({ products, title, seeAllLabel }) {
               </button>
             </div>
 
-            <Link
-              href="/products"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-[#1d1d1f]
-                text-[13px] font-medium text-[#1d1d1f] transition-all duration-200
-                hover:bg-[#1d1d1f] hover:text-white active:scale-95"
-            >
-              {seeAllLabel}
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </Link>
           </div>
         </div>
 

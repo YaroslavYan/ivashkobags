@@ -14,10 +14,10 @@ export default function HeaderOverlay({ productsCartCount }) {
         <Navigation productsCartCount={productsCartCount} />
         <MobileNavigation productsCartCount={productsCartCount} />
 
-        <div className="absolute left-[50px] bottom-[8%] sm:bottom-[15%] md:bottom-1/4 max-w-[60vw] md:max-w-[calc(100%-280px)]">
+        <div className="absolute left-[20px] sm:left-[50px] bottom-[10%] sm:bottom-[15%] md:bottom-1/4 max-w-[75vw] sm:max-w-[60vw] md:max-w-[calc(100%-280px)]">
           <h1
             data-reveal
-            className="text-white font-semibold tracking-tight leading-none text-3xl md:text-4xl lg:text-5xl mb-3 from-right"
+            className="text-white font-semibold tracking-tight leading-none text-xl sm:text-3xl md:text-4xl lg:text-5xl mb-3 from-right"
           >
             {t("tagline")}
           </h1>
